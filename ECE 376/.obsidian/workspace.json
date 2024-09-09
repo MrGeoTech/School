@@ -4,35 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "68cbb7071c55b9e8",
+        "id": "d9b0700dea9e81c7",
         "type": "tabs",
         "children": [
           {
-            "id": "e98a369124bc2649",
+            "id": "2ea48f72474992f3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Class 1.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b08aae26ae36ae7d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Class 2.md",
+                "file": "Homeworks/HW02.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Class 2.md",
+                "file": "Homeworks/HW02.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Class 2.md",
+                "file": "Homeworks/HW02.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Class 2.md"
+                "file": "Homeworks/HW02.md"
               }
             }
           }
@@ -159,10 +146,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b08aae26ae36ae7d",
+  "active": "f674d083f35ba925",
   "lastOpenFiles": [
+    "Homeworks/HW02.pdf",
+    "Homeworks/HW02.md",
+    "Class 4.md",
+    "Projects/test/nbproject/private/private.xml",
+    "Projects/test/1234.s",
+    "Projects/test/1234.S",
+    "Projects/test/build/default/debug",
+    "Projects/test/build/default",
+    "Projects/test/build",
+    "Projects/test/1234.asm",
+    "Projects/test/nbproject/Makefile-genesis.properties",
+    "Projects/test/nbproject/Makefile-variables.mk",
     "Class 1.md",
     "Class 2.md",
+    "Class 3.md",
     "Welcome.md"
   ]
 }

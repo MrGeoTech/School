@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Class 3.md",
+                "file": "Class 4.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Class 3.md",
+                "file": "Class 4.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Class 3.md",
+                "file": "Class 4.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Class 3.md"
+                "file": "Class 4.md"
               }
             }
           }
@@ -146,15 +146,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a8096c98f93b3e6c",
+  "active": "091a1db53d96062d",
   "lastOpenFiles": [
-    "Images/Class3_1.png",
     "Class 2.md",
     "Class 3.md",
+    "Class 4.md",
+    "Images/Class4_4.png",
+    "Images/Class4_3.png",
+    "Images/Class4_2.png",
+    "Images/Class4_1.png",
+    "Pasted image 20240905125932.png",
+    "Class 1.md",
+    "Images/Class4_1.png",
+    "Images/Pasted image 20240905125903.png",
+    "Images/Class3_1.png",
     "Images/Class2_1.png",
     "Images",
     "Images/Class2_1.png",
-    "Class 1.md",
     "Welcome.md"
   ]
 }
