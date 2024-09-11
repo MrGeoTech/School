@@ -1,31 +1,21 @@
 {
   "main": {
-    "id": "48c52873dcc7475d",
+    "id": "c6dec39528ba9515",
     "type": "split",
     "children": [
       {
-        "id": "d9b0700dea9e81c7",
+        "id": "3bc2b30707f76233",
         "type": "tabs",
         "children": [
           {
-            "id": "2ea48f72474992f3",
+            "id": "d20bee6e8880289f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Homeworks/HW03.md",
+                "file": "Homeworks/HW01.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "4dde4c32ac8fbc42",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Homeworks/HW03.pdf"
               }
             }
           }
@@ -35,15 +25,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "6916c95b4768a9fd",
+    "id": "c06b854498d4ef71",
     "type": "split",
     "children": [
       {
-        "id": "75cbdd38343bf179",
+        "id": "8362c8718754a1d7",
         "type": "tabs",
         "children": [
           {
-            "id": "f674d083f35ba925",
+            "id": "cf44f43347402c63",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -53,7 +43,7 @@
             }
           },
           {
-            "id": "4c7859cded7ee882",
+            "id": "e87641c894e2185d",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -68,7 +58,7 @@
             }
           },
           {
-            "id": "3ffc25e28fe8b7de",
+            "id": "c6e788c026fb693b",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -82,20 +72,20 @@
     "width": 300
   },
   "right": {
-    "id": "0b9eb7c7a3773538",
+    "id": "3f0ebfd96b2aeb4f",
     "type": "split",
     "children": [
       {
-        "id": "460efe31d4300ad6",
+        "id": "aa57fd54376292f9",
         "type": "tabs",
         "children": [
           {
-            "id": "d01abfa5b7e4e1d3",
+            "id": "de990c7b437db533",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Homeworks/HW03.md",
+                "file": "Homeworks/HW01.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,19 +97,19 @@
             }
           },
           {
-            "id": "cb3904fe59e84b0d",
+            "id": "c78c55c2043ef128",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Homeworks/HW03.md",
+                "file": "Homeworks/HW01.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "8112370fac201679",
+            "id": "b11dc93f065bd807",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -130,12 +120,12 @@
             }
           },
           {
-            "id": "1c2eb5429ef73606",
+            "id": "6928e57b82395c3e",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Homeworks/HW03.md"
+                "file": "Homeworks/HW01.md"
               }
             }
           }
@@ -156,24 +146,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2ea48f72474992f3",
+  "active": "cf44f43347402c63",
   "lastOpenFiles": [
-    "Homeworks/HW03.pdf",
-    "Homeworks/HW03.md",
-    "Homeworks/HW02.md",
-    "Projects/test/build/default/production/test.o.d",
-    "Projects/test/build/default/production/test.o",
-    "Projects/test/test.asm~",
-    "Homeworks/HW02.pdf",
-    "Class 4.md",
-    "Projects/test/nbproject/private/private.xml",
-    "Projects/test/1234.s",
-    "Projects/test/1234.S",
-    "Projects/test/build/default/debug",
-    "Projects/test/build/default",
-    "Class 1.md",
-    "Class 2.md",
-    "Class 3.md",
-    "Welcome.md"
+    "Homeworks/HW01_1.png",
+    "Homeworks/HW01.md"
   ]
 }
