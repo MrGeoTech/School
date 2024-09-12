@@ -2,6 +2,7 @@
 To detect the sequence: `101`
 
 State Diagram:
+
 ![](Images/Class4_1.png)
 
 ### Alphanumeric FSM
@@ -12,8 +13,11 @@ It's not effective to label state with 1s and 0s
 Outputs: Z1, Z2, Z3....Zn
 
 Alphanumeric Diagram:
+
 ![](Images/Class4_2.png)
+
 Diagram with values:
+
 ![](Images/Class4_3.png)
 
 How to fix deadlocks?
@@ -28,6 +32,7 @@ Fixed Diagram:
 `T1 = F'R'`
 `T2 = F`
 `T3 = F'R`
+
 ![](Images/Class4_4.png)
 
 You can prove it follows the rules using boolean algebra:
