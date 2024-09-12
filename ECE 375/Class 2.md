@@ -16,7 +16,7 @@ Z: 000010000010100
 
 1. State Diagram:
 As Mealy State Machine
-![](Class2_1.png)
+![](Images/Class2_1.png)
 
 2. State Table
 
