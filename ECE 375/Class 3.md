@@ -27,4 +27,5 @@ B+ = X
 Z = AX
 
 4. Make Circuit Diagram
+
 ![](Images/Class3_1.png)
