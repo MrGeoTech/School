@@ -1,0 +1,17 @@
+vendor_name = ModelSim
+source_file = 1, /home/mrgeotech/School/ECE 375/Labs/Lab1/toplevel.vhd
+source_file = 1, /home/mrgeotech/intelFPGA_lite/20.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, /home/mrgeotech/intelFPGA_lite/20.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, /home/mrgeotech/intelFPGA_lite/20.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, /home/mrgeotech/intelFPGA_lite/20.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+source_file = 1, /home/mrgeotech/School/ECE 375/Labs/Lab1/db/toplevel.cbx.xml
+design_name = hard_block
+design_name = toplevel
+instance = comp, \Y~output\, Y~output, toplevel, 1
+instance = comp, \E~input\, E~input, toplevel, 1
+instance = comp, \B~input\, B~input, toplevel, 1
+instance = comp, \C~input\, C~input, toplevel, 1
+instance = comp, \D~input\, D~input, toplevel, 1
+instance = comp, \A~input\, A~input, toplevel, 1
+instance = comp, \Y~0\, Y~0, toplevel, 1
+instance = comp, \Y~1\, Y~1, toplevel, 1

@@ -1,0 +1,15 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity toplevel is
+    port (
+        A, B, C, D : in  std_logic;
+        Y          : out std_logic
+    );
+end toplevel;
+
+architecture toplevel_arch of toplevel is begin
+    process (A, B, C, D) begin
+        Y <= (A AND B) OR (C AND D) OR (E);
+    end process;
+end toplevel_arch;

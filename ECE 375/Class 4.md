@@ -2,9 +2,7 @@
 To detect the sequence: `101`
 
 State Diagram:
-
-![[Class4_1.png]]
-
+![](Class4_1.png)
 
 ### Alphanumeric FSM
 A sequential circuit with many inputs.
@@ -14,9 +12,9 @@ It's not effective to label state with 1s and 0s
 Outputs: Z1, Z2, Z3....Zn
 
 Alphanumeric Diagram:
-![[Class4_2.png]]
+![](Class4_2.png)
 Diagram with values:
-![[Class4_3.png]]
+![](Class4_3.png)
 
 How to fix deadlocks?
 
@@ -30,7 +28,7 @@ Fixed Diagram:
 `T1 = F'R'`
 `T2 = F`
 `T3 = F'R`
-![[Class4_4.png]]
+![](Class4_4.png)
 
 You can prove it follows the rules using boolean algebra:
 
@@ -39,5 +37,15 @@ P1 => T1 + T2 + T3 = 1
 => F'(R' + R) + F = 1
 => F' + F = 1
 => 1 = 1
-
 It satisfies the requirements of P1
+
+P2 => T1 * T2 = 0
+=> F'R' * F
+=> (**F' * F***)R' = 0
+P2 => T1 * T3 = 0
+=> F'R' * F'R = 0
+=> F'(**R' * R**) = 0
+P2 => T2 * T3 = 0
+=> F * F'R = 0
+=> (**F' * F***)R = 0
+It satisfies the requirements of P2

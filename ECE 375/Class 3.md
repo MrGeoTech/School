@@ -27,4 +27,4 @@ B+ = X
 Z = AX
 
 4. Make Circuit Diagram
-![[Class3_1.png]]
+![](Class3_1.png)
