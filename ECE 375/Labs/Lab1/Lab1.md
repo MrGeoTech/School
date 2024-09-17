@@ -16,5 +16,5 @@ architecture toplevel_arch of toplevel is begin
 end toplevel_arch;
 ```
 
-![Lab1 Model Sim](Lab1_ModelSim.png)
+![](Lab1_ModelSim.png)
 

@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 d/home/mrgeotech/School/ECE 375/Labs/Lab1/simulation/modelsim
 Etoplevel
-Z1 w1726157260
+Z1 w1726157911
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 !i122 0
@@ -23,9 +23,9 @@ V2VR_F5RlO^O6^N>jgRTM?3
 !s100 nYT1]W1`eQE?hX4jR@^ll3
 Z6 OV;C;2020.1;71
 31
-Z7 !s110 1726157300
+Z7 !s110 1726234233
 !i10b 1
-Z8 !s108 1726157300.000000
+Z8 !s108 1726234233.000000
 Z9 !s90 -reportprogress|300|-93|-work|work|/home/mrgeotech/School/ECE 375/Labs/Lab1/toplevel.vhd|
 !s107 /home/mrgeotech/School/ECE 375/Labs/Lab1/toplevel.vhd|
 !i113 1

@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
--- DATE "09/12/2024 11:08:09"
+-- DATE "09/13/2024 08:57:10"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -82,17 +82,17 @@ ENTITY 	toplevel IS
 	C : IN std_logic;
 	D : IN std_logic;
 	E : IN std_logic;
-	Y : OUT std_logic
+	Y : BUFFER std_logic
 	);
 END toplevel;
 
 -- Design Ports Information
--- Y	=>  Location: PIN_H13,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- E	=>  Location: PIN_A10,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- A	=>  Location: PIN_J13,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- C	=>  Location: PIN_G13,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- D	=>  Location: PIN_B10,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- B	=>  Location: PIN_J12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- Y	=>  Location: PIN_G19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- E	=>  Location: PIN_AB27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- A	=>  Location: PIN_AB28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- C	=>  Location: PIN_AC27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- D	=>  Location: PIN_AD27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- B	=>  Location: PIN_AC28,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF toplevel IS
@@ -112,12 +112,12 @@ SIGNAL ww_D : std_logic;
 SIGNAL ww_E : std_logic;
 SIGNAL ww_Y : std_logic;
 SIGNAL \Y~output_o\ : std_logic;
-SIGNAL \E~input_o\ : std_logic;
-SIGNAL \B~input_o\ : std_logic;
-SIGNAL \C~input_o\ : std_logic;
 SIGNAL \D~input_o\ : std_logic;
+SIGNAL \C~input_o\ : std_logic;
+SIGNAL \B~input_o\ : std_logic;
 SIGNAL \A~input_o\ : std_logic;
 SIGNAL \Y~0_combout\ : std_logic;
+SIGNAL \E~input_o\ : std_logic;
 SIGNAL \Y~1_combout\ : std_logic;
 
 COMPONENT hard_block
@@ -144,7 +144,7 @@ PORT MAP (
 	devclrn => ww_devclrn,
 	devpor => ww_devpor);
 
--- Location: IOOBUF_X38_Y73_N23
+-- Location: IOOBUF_X69_Y73_N16
 \Y~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -156,40 +156,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \Y~output_o\);
 
--- Location: IOIBUF_X38_Y73_N1
-\E~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_E,
-	o => \E~input_o\);
-
--- Location: IOIBUF_X40_Y73_N8
-\B~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_B,
-	o => \B~input_o\);
-
--- Location: IOIBUF_X38_Y73_N15
-\C~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_C,
-	o => \C~input_o\);
-
--- Location: IOIBUF_X38_Y73_N8
+-- Location: IOIBUF_X115_Y13_N8
 \D~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -200,7 +167,29 @@ PORT MAP (
 	i => ww_D,
 	o => \D~input_o\);
 
--- Location: IOIBUF_X40_Y73_N1
+-- Location: IOIBUF_X115_Y15_N8
+\C~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_C,
+	o => \C~input_o\);
+
+-- Location: IOIBUF_X115_Y14_N1
+\B~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_B,
+	o => \B~input_o\);
+
+-- Location: IOIBUF_X115_Y17_N1
 \A~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -211,27 +200,38 @@ PORT MAP (
 	i => ww_A,
 	o => \A~input_o\);
 
--- Location: LCCOMB_X39_Y72_N24
+-- Location: LCCOMB_X114_Y14_N24
 \Y~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \Y~0_combout\ = (\B~input_o\ & ((\A~input_o\) # ((\C~input_o\ & \D~input_o\)))) # (!\B~input_o\ & (\C~input_o\ & (\D~input_o\)))
+-- \Y~0_combout\ = (\D~input_o\ & ((\C~input_o\) # ((\B~input_o\ & \A~input_o\)))) # (!\D~input_o\ & (((\B~input_o\ & \A~input_o\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110101011000000",
+	lut_mask => "1111100010001000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \B~input_o\,
+	dataa => \D~input_o\,
 	datab => \C~input_o\,
-	datac => \D~input_o\,
+	datac => \B~input_o\,
 	datad => \A~input_o\,
 	combout => \Y~0_combout\);
 
--- Location: LCCOMB_X38_Y72_N0
+-- Location: IOIBUF_X115_Y18_N8
+\E~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_E,
+	o => \E~input_o\);
+
+-- Location: LCCOMB_X114_Y18_N24
 \Y~1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \Y~1_combout\ = (\E~input_o\) # (\Y~0_combout\)
+-- \Y~1_combout\ = (\Y~0_combout\) # (\E~input_o\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -239,8 +239,8 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \E~input_o\,
-	datad => \Y~0_combout\,
+	datab => \Y~0_combout\,
+	datad => \E~input_o\,
 	combout => \Y~1_combout\);
 
 ww_Y <= \Y~output_o\;
