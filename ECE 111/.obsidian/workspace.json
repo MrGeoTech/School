@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "11268973b815ae2e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Homeworks/HW02.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Homeworks/HW01.md",
+                "file": "Homeworks/HW02.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Homeworks/HW01.md",
+                "file": "Homeworks/HW02.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Homeworks/HW01.md"
+                "file": "Homeworks/HW02.md"
               }
             }
           }
@@ -148,7 +161,10 @@
   },
   "active": "cf44f43347402c63",
   "lastOpenFiles": [
-    "Homeworks/HW01_1.png",
-    "Homeworks/HW01.md"
+    "Homeworks/HW02_2.png",
+    "Homeworks/HW02_1.png",
+    "Homeworks/HW01.md",
+    "Homeworks/HW02.md",
+    "Homeworks/HW01_1.png"
   ]
 }

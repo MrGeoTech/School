@@ -8,11 +8,15 @@
         "type": "tabs",
         "children": [
           {
-            "id": "79266df7e3426976",
+            "id": "9c244561e3062fa5",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Labs/Lab1/Lab1.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Labs/Lab1/Lab1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Labs/Lab1/Lab1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Labs/Lab1/Lab1.md"
+              }
             }
           }
         ]
@@ -138,8 +146,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "79266df7e3426976",
+  "active": "9c244561e3062fa5",
   "lastOpenFiles": [
+    "Class 7.md",
+    "Class 6.md",
+    "Images/Class6_1.png",
+    "Class 5.md",
     "Labs/Lab1/Lab1.md",
     "Labs/Lab1/toplevel.qws",
     "Labs/Lab1/Lab1_ModelSim.png",
@@ -152,7 +164,6 @@
     "Labs/Lab1/db/toplevel.sta.rpt.tmp",
     "Labs/Lab1/db/toplevel.sta.rdb.wrk",
     "Labs/Lab1/db/toplevel.cycloneive_io_sim_cache.45um_ii_1200mv_85c_slow.hsd.wrk",
-    "Class 5.md",
     "Images/Class5_1.png",
     "Class 4.md",
     "Class 1.md",

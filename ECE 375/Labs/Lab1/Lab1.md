@@ -18,3 +18,4 @@ end toplevel_arch;
 
 ![](Lab1_ModelSim.png)
 
+`Demonstrated on FPGA in person in lab`
