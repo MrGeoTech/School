@@ -99,7 +99,7 @@ ${OBJECTDIR}/test.o: test.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/test.o.d 
 	@${RM} ${OBJECTDIR}/test.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/test.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/test.lst\\\" -e\\\"${OBJECTDIR}/test.err\\\" $(ASM_OPTIONS) -rDEC   -o\\\"${OBJECTDIR}/test.o\\\" \\\"test.asm\\\" 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/test.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/test.lst\\\" -e\\\"${OBJECTDIR}/test.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/test.o\\\" \\\"test.asm\\\" 
 	@${DEP_GEN} -d "${OBJECTDIR}/test.o"
 	@${FIXDEPS} "${OBJECTDIR}/test.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
@@ -108,7 +108,7 @@ ${OBJECTDIR}/test.o: test.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/test.o.d 
 	@${RM} ${OBJECTDIR}/test.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/test.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/test.lst\\\" -e\\\"${OBJECTDIR}/test.err\\\" $(ASM_OPTIONS) -rDEC   -o\\\"${OBJECTDIR}/test.o\\\" \\\"test.asm\\\" 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/test.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/test.lst\\\" -e\\\"${OBJECTDIR}/test.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/test.o\\\" \\\"test.asm\\\" 
 	@${DEP_GEN} -d "${OBJECTDIR}/test.o"
 	@${FIXDEPS} "${OBJECTDIR}/test.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
