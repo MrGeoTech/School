@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "d9b0700dea9e81c7",
+        "id": "d15df31c2d3e2162",
         "type": "tabs",
         "children": [
           {
-            "id": "2ea48f72474992f3",
+            "id": "a7e02acce3f7a674",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -146,8 +146,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2ea48f72474992f3",
+  "active": "a7e02acce3f7a674",
   "lastOpenFiles": [
+    "Homeworks/HW04.md",
     "Homeworks/Images/HW04_4.gif",
     "Homeworks/Images/HW04_3.gif",
     "Homeworks/Images/HW04_2.gif",
@@ -163,14 +164,12 @@
     "Projects/testc/build/default/production/main.d",
     "Homeworks/Images/HW04_1.gif",
     "Homeworks/HW03.md",
-    "Homeworks/HW04.md",
     "Homeworks/Images/HW03_6.png",
     "Homeworks/Images/HW03_6.png",
     "Homeworks/Images/HW03_5.png",
     "Homeworks/Images/HW03_4.png",
     "Homeworks/Images/HW03_3.png",
     "Pasted image 20240916142301.png",
-    "Homeworks/Images/HW03_2.png",
     "Class 4.md",
     "Class 5.md",
     "Homeworks/HW02.md",

@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "c40a70c00e74850e",
+        "id": "1ca5ee493caf3cf8",
         "type": "tabs",
         "children": [
           {
-            "id": "b77156debd41f9d1",
+            "id": "6680b3818c955b32",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "HW03.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "HW03.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "HW03.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "HW03.md"
+              }
             }
           }
         ]
@@ -138,12 +146,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b77156debd41f9d1",
+  "active": "6680b3818c955b32",
   "lastOpenFiles": [
-    "Homeworks/HW01.md",
-    "Homeworks/HW02.md",
-    "Homeworks/HW02_1.png",
-    "Homeworks/HW02_2.png",
-    "Homeworks/HW01_1.png"
+    "Images/HW03_2.png",
+    "HW03.md",
+    "Images/HW03_1.png",
+    "HW02.md",
+    "HW01.md",
+    "Images/HW02_2.png",
+    "Images/HW02_1.png",
+    "Images/HW01_1.png"
   ]
 }
