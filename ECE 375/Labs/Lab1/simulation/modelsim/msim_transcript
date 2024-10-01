@@ -1,4 +1,4 @@
-# do toplevel_run_msim_rtl_vhdl.do
+# do fsm_run_msim_rtl_vhdl.do
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
@@ -9,40 +9,44 @@
 # Copying /home/mrgeotech/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vcom -93 -work work {/home/mrgeotech/School/ECE 375/Labs/Lab1/toplevel.vhd}
+# vcom -93 -work work {/home/mrgeotech/School/ECE 375/Labs/Lab1/fsm.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 08:30:33 on Sep 13,2024
-# vcom -reportprogress 300 -93 -work work /home/mrgeotech/School/ECE 375/Labs/Lab1/toplevel.vhd 
+# Start time: 21:27:43 on Sep 26,2024
+# vcom -reportprogress 300 -93 -work work /home/mrgeotech/School/ECE 375/Labs/Lab1/fsm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity toplevel
-# -- Compiling architecture toplevel_arch of toplevel
-# End time: 08:30:33 on Sep 13,2024, Elapsed time: 0:00:00
+# -- Compiling entity FSM
+# -- Compiling architecture ARCH of FSM
+# End time: 21:27:43 on Sep 26,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # 
 # stdin: <EOF>
-vsim work.toplevel
-# vsim work.toplevel 
-# Start time: 08:30:40 on Sep 13,2024
+vsim work.fsm
+# vsim work.fsm 
+# Start time: 21:27:46 on Sep 26,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.toplevel(toplevel_arch)
+# Loading work.fsm(arch)
 add wave -position insertpoint  \
-sim:/toplevel/A \
-sim:/toplevel/B \
-sim:/toplevel/C \
-sim:/toplevel/D \
-sim:/toplevel/E \
-sim:/toplevel/Y
-force -freeze sim:/toplevel/A 0 0, 1 {50 ps} -r 100
-force -freeze sim:/toplevel/B 0 0, 1 {100 ps} -r 200
-force -freeze sim:/toplevel/C 1 0, 0 {200 ps} -r 400
-force -freeze sim:/toplevel/C 0 0, 1 {200 ps} -r 400
-force -freeze sim:/toplevel/D 0 0, 1 {400 ps} -r 800
-force -freeze sim:/toplevel/E 0 0, 1 {800 ps} -r 1600
+sim:/fsm/X \
+sim:/fsm/CLOCK \
+sim:/fsm/RESET \
+sim:/fsm/O \
+sim:/fsm/STATE
+force -freeze sim:/fsm/CLOCK 1 0, 0 {50 ps} -r 100
+force -freeze sim:/fsm/X 1 0
 run
-# End time: 08:41:39 on Sep 13,2024, Elapsed time: 0:10:59
+run
+run
+force -freeze sim:/fsm/X 0 0
+run
+run
+run
+run
+run
+run
+# End time: 21:46:23 on Sep 26,2024, Elapsed time: 0:18:37
 # Errors: 0, Warnings: 0

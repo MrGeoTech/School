@@ -13,19 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Homeworks/HW03.md",
+                "file": "Homeworks/HW04.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "7f8ce6ab31bccc53",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Homeworks/HW03.pdf"
               }
             }
           }
@@ -95,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Homeworks/HW03.md",
+                "file": "Homeworks/HW04.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Homeworks/HW03.md",
+                "file": "Homeworks/HW04.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Homeworks/HW03.md"
+                "file": "Homeworks/HW04.md"
               }
             }
           }
@@ -156,31 +146,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f674d083f35ba925",
+  "active": "2ea48f72474992f3",
   "lastOpenFiles": [
-    "Homeworks/Images/HW03_V0.mp4",
-    "Homeworks/Images/PXL_20240917_011944744.TS.mp4",
-    "Homeworks/HW03.pdf",
+    "Homeworks/Images/HW04_4.gif",
+    "Homeworks/Images/HW04_3.gif",
+    "Homeworks/Images/HW04_2.gif",
+    "Homeworks/Images/HW04_4.mp4",
+    "Homeworks/Images/HW04_3.mp4",
+    "Homeworks/Images/HW04_2.mp4",
+    "Homeworks/Images/PXL_20241001_010012036.TS.mp4",
+    "Homeworks/Images/PXL_20240930_235106504.TS.mp4",
+    "Homeworks/Images/PXL_20240930_233811394.TS.mp4",
+    "Projects/testc/main.c~",
+    "Projects/testc/build/default/production/main.p1.d",
+    "Projects/testc/build/default/production/main.p1",
+    "Projects/testc/build/default/production/main.d",
+    "Homeworks/Images/HW04_1.gif",
     "Homeworks/HW03.md",
+    "Homeworks/HW04.md",
     "Homeworks/Images/HW03_6.png",
     "Homeworks/Images/HW03_6.png",
-    "Projects/test/test.asm~",
     "Homeworks/Images/HW03_5.png",
     "Homeworks/Images/HW03_4.png",
     "Homeworks/Images/HW03_3.png",
     "Pasted image 20240916142301.png",
     "Homeworks/Images/HW03_2.png",
-    "Homeworks/Images/HW03_1.png",
-    "Homeworks/Images",
     "Class 4.md",
     "Class 5.md",
     "Homeworks/HW02.md",
-    "Projects/test/build/default/production/test.o.d",
-    "Projects/test/build/default/production/test.o",
-    "Homeworks/HW02.pdf",
-    "Projects/test/nbproject/private/private.xml",
-    "Projects/test/1234.s",
-    "Projects/test/1234.S",
     "Class 1.md",
     "Class 2.md",
     "Class 3.md",
