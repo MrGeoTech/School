@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fsm
-Thu Sep 26 21:26:56 2024
+Fri Oct  4 17:59:57 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -15,9 +15,10 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |FSM|STATE
   9. General Register Statistics
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -44,15 +45,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep 26 21:26:56 2024       ;
+; Analysis & Synthesis Status        ; Successful - Fri Oct  4 17:59:57 2024       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; fsm                                         ;
 ; Top-level Entity Name              ; FSM                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 7                                           ;
-;     Total combinational functions  ; 7                                           ;
-;     Dedicated logic registers      ; 5                                           ;
-; Total registers                    ; 5                                           ;
+; Total logic elements               ; 8                                           ;
+;     Total combinational functions  ; 8                                           ;
+;     Dedicated logic registers      ; 4                                           ;
+; Total registers                    ; 4                                           ;
 ; Total pins                         ; 4                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -173,36 +174,36 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------------+--------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 7           ;
-;                                             ;             ;
-; Total combinational functions               ; 7           ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 2           ;
-;     -- 3 input functions                    ; 3           ;
-;     -- <=2 input functions                  ; 2           ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 7           ;
-;     -- arithmetic mode                      ; 0           ;
-;                                             ;             ;
-; Total registers                             ; 5           ;
-;     -- Dedicated logic registers            ; 5           ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 4           ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; RESET~input ;
-; Maximum fan-out                             ; 6           ;
-; Total fan-out                               ; 38          ;
-; Average fan-out                             ; 1.90        ;
-+---------------------------------------------+-------------+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++---------------------------------------------+---------+
+; Resource                                    ; Usage   ;
++---------------------------------------------+---------+
+; Estimated Total logic elements              ; 8       ;
+;                                             ;         ;
+; Total combinational functions               ; 8       ;
+; Logic element usage by number of LUT inputs ;         ;
+;     -- 4 input functions                    ; 5       ;
+;     -- 3 input functions                    ; 2       ;
+;     -- <=2 input functions                  ; 1       ;
+;                                             ;         ;
+; Logic elements by mode                      ;         ;
+;     -- normal mode                          ; 8       ;
+;     -- arithmetic mode                      ; 0       ;
+;                                             ;         ;
+; Total registers                             ; 4       ;
+;     -- Dedicated logic registers            ; 4       ;
+;     -- I/O registers                        ; 0       ;
+;                                             ;         ;
+; I/O pins                                    ; 4       ;
+;                                             ;         ;
+; Embedded Multiplier 9-bit elements          ; 0       ;
+;                                             ;         ;
+; Maximum fan-out node                        ; X~input ;
+; Maximum fan-out                             ; 6       ;
+; Total fan-out                               ; 41      ;
+; Average fan-out                             ; 2.05    ;
++---------------------------------------------+---------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -210,7 +211,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |FSM                       ; 7 (7)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 4    ; 0            ; |FSM                ; FSM         ; work         ;
+; |FSM                       ; 8 (8)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 4    ; 0            ; |FSM                ; FSM         ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -233,14 +234,24 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 5     ;
+; Total registers                              ; 4     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 2     ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |FSM|STATE                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |FSM|STATE                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +-----------------------------------------------------+
@@ -249,17 +260,16 @@ Encoding Type:  One-Hot
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 4                           ;
-; cycloneiii_ff         ; 5                           ;
-;     ENA               ; 2                           ;
-;     plain             ; 3                           ;
-; cycloneiii_lcell_comb ; 7                           ;
-;     normal            ; 7                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 3                           ;
-;         4 data inputs ; 2                           ;
+; cycloneiii_ff         ; 4                           ;
+;     plain             ; 4                           ;
+; cycloneiii_lcell_comb ; 8                           ;
+;     normal            ; 8                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 5                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.20                        ;
+; Average LUT depth     ; 1.60                        ;
 +-----------------------+-----------------------------+
 
 
@@ -278,7 +288,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Sep 26 21:26:48 2024
+    Info: Processing started: Fri Oct  4 17:59:49 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab1 -c fsm
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -286,16 +296,17 @@ Warning (12125): Using design file fsm.vhd, which is not specified as a design f
     Info (12022): Found design unit 1: FSM-ARCH File: /home/mrgeotech/School/ECE 375/Labs/Lab1/fsm.vhd Line: 11
     Info (12023): Found entity 1: FSM File: /home/mrgeotech/School/ECE 375/Labs/Lab1/fsm.vhd Line: 4
 Info (12127): Elaborating entity "fsm" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at fsm.vhd(46): signal "STATE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mrgeotech/School/ECE 375/Labs/Lab1/fsm.vhd Line: 46
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 11 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 12 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 7 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 688 megabytes
-    Info: Processing ended: Thu Sep 26 21:26:56 2024
+    Info (21061): Implemented 8 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 692 megabytes
+    Info: Processing ended: Fri Oct  4 17:59:57 2024
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:18
 

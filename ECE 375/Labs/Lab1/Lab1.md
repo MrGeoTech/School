@@ -65,7 +65,7 @@ begin
             end if;
         end if;
     end process;
-end architecture; -- <^^ This is why we hate VHDL
+end architecture;
 ```
 
 ---
@@ -78,3 +78,4 @@ end architecture; -- <^^ This is why we hate VHDL
 
 ### Physical FPGA Verification
 
+![](Lab1_Demonstration.gif)

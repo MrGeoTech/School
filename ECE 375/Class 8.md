@@ -77,6 +77,10 @@ What happens if we change the order? Say to:
 
 1. States which have the same next state for a given input should be given adjacent state assignments (adjacent state assignments are only one bit changes; eg. 00 => 01, 10)
 
+2. States which are next states of the same state should be given adjacent assignment
+
+3. State which have the same output for a given input should be given adjacent assignment
+
 Aside: Transistors
 
 N-type and P-type

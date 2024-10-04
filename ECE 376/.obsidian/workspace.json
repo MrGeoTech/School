@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "d15df31c2d3e2162",
+        "id": "9db9fe6b1c595814",
         "type": "tabs",
         "children": [
           {
-            "id": "a7e02acce3f7a674",
+            "id": "548c12ce3669c911",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Homeworks/HW04.md",
+                "file": "Homeworks/HW05.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Homeworks/HW04.md",
+                "file": "Homeworks/HW05.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Homeworks/HW04.md",
+                "file": "Homeworks/HW05.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Homeworks/HW04.md"
+                "file": "Homeworks/HW05.md"
               }
             }
           }
@@ -146,22 +146,25 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a7e02acce3f7a674",
+  "active": "548c12ce3669c911",
   "lastOpenFiles": [
+    "Projects/testc/build/default/production/piclib.p1.d",
+    "Projects/testc/build/default/production/piclib.p1.out",
+    "Projects/testc/build/default/production/piclib.p1",
+    "Projects/testc/build/default/production/piclib.i-5f947c35",
+    "Projects/testc/build/default/production/main.p1.d",
+    "Projects/testc/build/default/production/main.p1",
+    "Projects/testc/build/default/production/main.d",
+    "Projects/testc/build/default/production/main.i-a598f38e",
+    "Projects/testc/piclib.h~",
+    "Projects/testc/piclib.c~",
+    "Projects/testc/build/default/production/piclib.i-90862d59",
+    "Homeworks/Images/HW05_1.png",
+    "Homeworks/HW05.md",
     "Homeworks/HW04.md",
     "Homeworks/Images/HW04_4.gif",
     "Homeworks/Images/HW04_3.gif",
     "Homeworks/Images/HW04_2.gif",
-    "Homeworks/Images/HW04_4.mp4",
-    "Homeworks/Images/HW04_3.mp4",
-    "Homeworks/Images/HW04_2.mp4",
-    "Homeworks/Images/PXL_20241001_010012036.TS.mp4",
-    "Homeworks/Images/PXL_20240930_235106504.TS.mp4",
-    "Homeworks/Images/PXL_20240930_233811394.TS.mp4",
-    "Projects/testc/main.c~",
-    "Projects/testc/build/default/production/main.p1.d",
-    "Projects/testc/build/default/production/main.p1",
-    "Projects/testc/build/default/production/main.d",
     "Homeworks/Images/HW04_1.gif",
     "Homeworks/HW03.md",
     "Homeworks/Images/HW03_6.png",
@@ -169,7 +172,6 @@
     "Homeworks/Images/HW03_5.png",
     "Homeworks/Images/HW03_4.png",
     "Homeworks/Images/HW03_3.png",
-    "Pasted image 20240916142301.png",
     "Class 4.md",
     "Class 5.md",
     "Homeworks/HW02.md",
