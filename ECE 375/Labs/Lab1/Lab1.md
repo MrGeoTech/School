@@ -78,4 +78,4 @@ end architecture;
 
 ### Physical FPGA Verification
 
-![](Lab1_Demonstration.gif)
+![Please See Lab1_Demonstration.gif in this directory](Lab1_Demonstration.gif)
