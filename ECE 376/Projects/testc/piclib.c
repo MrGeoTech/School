@@ -193,24 +193,22 @@ void reverse_half(volatile unsigned char *port, unsigned int steps, unsigned int
 
 static unsigned char PIXEL;
 
-inline void neopixel_send_byte(unsigned char byte) {
+void neopixel_send_byte(unsigned char byte) {
     PIXEL = byte;
+    asm("call Pixel_8");
+    asm("return");
 
-    asm("call Loop");
-    asm("call Loop");
-    asm("call Loop");
-    asm("call Loop");
-
-    asm("call Loop");
-    asm("call Loop");
-    asm("call Loop");
-    asm("call Loop");
-}
-
-void neopixel_send(unsigned char *colors) {
-    // "Loads" the NeoPixel send loop
-    asm("goto Skip");
-    asm("Loop:");
+    asm("Pixel_8:");
+    asm("call Pixel_1");
+    asm("call Pixel_1");
+    asm("call Pixel_1");
+    asm("call Pixel_1");
+    asm("call Pixel_1");
+    asm("call Pixel_1");
+    asm("call Pixel_1");
+    asm("call Pixel_1");
+    asm("return");
+    asm("Pixel_1:");
     asm("bsf PORTD, 0");
     asm("nop");
     asm("btfss _PIXEL, 7");
@@ -220,11 +218,26 @@ void neopixel_send(unsigned char *colors) {
     asm("nop");
     asm("bcf PORTD, 0");
     asm("return");
-    asm("Skip:");
+}
+
+void neopixel_send(unsigned char *colors) {
+    TRISD &= 0xFE;
     // Sends all the pixel data
     for (unsigned char i = 0; i < NEO_PIXEL_COUNT * 3; i += 3) {
         neopixel_send_byte(colors[i]);
         neopixel_send_byte(colors[i+1]);
         neopixel_send_byte(colors[i+2]);
     }
+    wait_fractional(5);
+}
+
+void neopixel_set(unsigned char red, unsigned char green, unsigned char blue) {
+    TRISD &= 0xFE;
+    // Sends all the pixel data
+    for (unsigned char i = 0; i < NEO_PIXEL_COUNT * 3; i += 3) {
+        neopixel_send_byte(green);
+        neopixel_send_byte(red);
+        neopixel_send_byte(blue);
+    }
+    wait_fractional(5);
 }

@@ -6,5 +6,5 @@ if [ -z "$1" ]
     then
     echo "Must pass name of file (without file type) to shell script!"
 else
-    ffmpeg -to 10 -i "$1.mp4" -vf "fps=24,scale=720:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 "$1.gif"
+    ffmpeg -to 20 -i "$1.mp4" -vf "fps=24,scale=720:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 "$1.gif"
 fi

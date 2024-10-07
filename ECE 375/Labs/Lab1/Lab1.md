@@ -1,3 +1,4 @@
+For best viewing, see on view on [GitHub](https://github.com/MrGeoTech/School/blob/master/ECE%20375/Labs/Lab1/Lab1.md) :)
 # Lab 1 Design Requirements
 
 ![](Lab1_Requirements.png)

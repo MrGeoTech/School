@@ -1,4 +1,4 @@
-#include <pic18.h>
+#include <xc.h>
 // Used in the wait function to measure time
 // You can set your own to make sure your PIC is perfectly timed
 // To figure out the value you should use for your PIC, you can
@@ -85,7 +85,7 @@ void reverse_half(volatile unsigned char *port, unsigned int steps, unsigned int
 /* ------ Neo-Pixel ------ */
 
 #ifndef NEO_PIXEL_COUNT
-#define NEO_PIXEL_COUNT 6
+#define NEO_PIXEL_COUNT 8
 #endif
 
 #if NEO_PIXEL_COUNT > 255
@@ -95,3 +95,5 @@ void reverse_half(volatile unsigned char *port, unsigned int steps, unsigned int
 // Sends the array `colors` out on PORTD pin 0 (since it's not being used by the LCD)
 // `colors` must be an array of at least `NEO_PIXEL_COUNT * 3` bytes
 void neopixel_send(unsigned char *colors);
+// Sets all the neopixels to the given RGB values
+void neopixel_set(unsigned char red, unsigned char green, unsigned char blue);
