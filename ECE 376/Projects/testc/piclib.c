@@ -3,16 +3,19 @@
  */
 #include "piclib.h"
 
-void wait(unsigned int milliseconds) {
-    unsigned int i, j;
+/* ------ Waits ------ */
+
+void wait(u16_t milliseconds) {
+    u16_t i, j;
     for (i = 0; i < milliseconds; i++) {
         for (j = 0; j < LOOPS_PER_MS; j++); 
     }
 }
 
-void wait_fractional(unsigned char shift) {
-    for (unsigned int i = 0; i < LOOPS_PER_MS >> shift; i++);
+void wait_fractional(u8_t shift) {
+    for (u16_t i = 0; i < LOOPS_PER_MS >> shift; i++);
 }
+
 
 /* ------ LCD Screen ------ */
 
@@ -48,16 +51,14 @@ inline void lcd_init() {
     lcd_send(MODE_INCREMENT_NORMAL);
 }
 
-// Sends an command to the LCD screen
-void lcd_send(unsigned char command) {
+void lcd_send(u8_t command) {
     PORTD = command & 0xF0;
     send_lcd_inst();
     PORTD = (command << 4) & 0xF0;
     send_lcd_inst();
 }
 
-// Moves the LCD cursor to the new row and column position
-void lcd_goto(unsigned char row, unsigned char column) {
+void lcd_goto(u8_t row, u8_t column) {
 #ifdef DEBUG
     if (row > 1 || column > 16) {
         lcd_send(HOME);
@@ -71,18 +72,15 @@ void lcd_goto(unsigned char row, unsigned char column) {
         lcd_send(column + 0x80);
 }
 
-// Appends the character to the LCD screen and moves the cursor over one
-void lcd_append(unsigned char character) {
+void lcd_append(u8_t character) {
     PORTD = (character & 0xF0) | 0x04;
     send_lcd_inst();
     PORTD = ((character << 4) & 0xF0) | 0x04;
     send_lcd_inst();
 }
 
-// Writes an integer out to the LCD screen
-// Warning: Does NOT behave the same as LCD_Out. You will get different output from that function
-void lcd_append_int(long int integer, unsigned char digits, unsigned char decimal_digits) {
-    unsigned char array[10], i;
+void lcd_append_int(i32_t integer, u8_t digits, u8_t decimal_digits) {
+    u8_t array[10], i;
 
     if (integer < 0) {
         lcd_append('-');
@@ -100,10 +98,8 @@ void lcd_append_int(long int integer, unsigned char digits, unsigned char decima
     }
 }
 
-// Writes out a string to the LCD.
-// This will automatically wrap at `len > 16`
-void lcd_append_all(char *string) {
-    char *ptr = string;
+void lcd_append_all(u8_t *string) {
+    u8_t *ptr = string;
     while (*ptr) {
         if (ptr - string == 16) lcd_goto(1, 0);
 #ifdef DEBUG
@@ -112,15 +108,15 @@ void lcd_append_all(char *string) {
             lcd_append_all("String too long!Can't output all");
         };
 #endif
-
         lcd_append(*ptr);
         ptr++;
     }
 }
 
+
 /* ------ Keypad ------ */
 
-char read_keypad(volatile unsigned char *port) {
+char keypad_read(volatile u8_t *port) {
     // Set TRISX to 0x07 (want inputs from the bottom 3 bits but output top 5)
     *(port + 0x12) = 0x07;
     // Setting PORTX to enable all buttons
@@ -153,19 +149,20 @@ Row4:
     return '*';
 }
 
+
 /* ------ Stepper Motor ------ */
 
-unsigned char table_index = 0;
-unsigned char table[4] = { 0x31, 0x62, 0xC4, 0x98 };
+u8_t table_index = 0;
+u8_t table[4] = { 0x31, 0x62, 0xC4, 0x98 };
 
-void rotate_full(volatile unsigned char *port, unsigned int steps, unsigned int ms_per_step) {
+void rotate_full(volatile u8_t *port, u16_t steps, u16_t ms_per_step) {
     rotate_half(port, steps << 1, ms_per_step >> 1);
 }
 
-void rotate_half(volatile unsigned char *port, unsigned int steps, unsigned int ms_per_step) {
+void rotate_half(volatile u8_t *port, u16_t steps, u16_t ms_per_step) {
     // Set TRISX to output for the lower half
     *(port + 0x12) &= 0xF0;
-    for (unsigned int i = 0; i < steps; i++) {
+    for (u16_t i = 0; i < steps; i++) {
         // Gets value in the table at (i / 2) % 4 and if i % 2 is 1, it shifts it over, getting the half-step value
         *port = (*port & 0xF0) | ((table[table_index] >> ((i & 0x01) << 2)) & 0x0F); 
         if (i & 0x01) table_index = (table_index + 1) & 0x03;
@@ -174,14 +171,14 @@ void rotate_half(volatile unsigned char *port, unsigned int steps, unsigned int 
     }
 }
 
-void reverse_full(volatile unsigned char *port, unsigned int steps, unsigned int ms_per_step) {
+void reverse_full(volatile u8_t *port, u16_t steps, u16_t ms_per_step) {
     reverse_half(port, steps << 1, ms_per_step >> 1);
 }
 
-void reverse_half(volatile unsigned char *port, unsigned int steps, unsigned int ms_per_step) {
+void reverse_half(volatile u8_t *port, u16_t steps, u16_t ms_per_step) {
     // Set TRISX to output for the lower half
     *(port + 0x12) &= 0xF0;
-    for (unsigned int i = 0; i < steps; i++) {
+    for (u16_t i = 0; i < steps; i++) {
         // Gets value in the table at (i / 2) % 4 and if i % 2 is 1, it shifts it over, getting the half-step value
         *port = (*port & 0xF0) | ((table[table_index] >> ((i & 0x01) << 2)) & 0x0F); 
         if (i & 0x01) table_index = (table_index - 1) & 0x03;
@@ -189,11 +186,12 @@ void reverse_half(volatile unsigned char *port, unsigned int steps, unsigned int
     }
 }
 
+
 /* ------ Neo-Pixel ------ */
 
-static unsigned char PIXEL;
+static u8_t PIXEL;
 
-void neopixel_send_byte(unsigned char byte) {
+void neopixel_send_byte(u8_t byte) {
     PIXEL = byte;
     asm("call Pixel_8");
     asm("return");
@@ -220,10 +218,10 @@ void neopixel_send_byte(unsigned char byte) {
     asm("return");
 }
 
-void neopixel_send(unsigned char *colors) {
+void neopixel_send(u8_t *colors) {
     TRISD &= 0xFE;
     // Sends all the pixel data
-    for (unsigned char i = 0; i < NEO_PIXEL_COUNT * 3; i += 3) {
+    for (u8_t i = 0; i < NEO_PIXEL_COUNT * 3; i += 3) {
         neopixel_send_byte(colors[i]);
         neopixel_send_byte(colors[i+1]);
         neopixel_send_byte(colors[i+2]);
@@ -231,13 +229,83 @@ void neopixel_send(unsigned char *colors) {
     wait_fractional(5);
 }
 
-void neopixel_set(unsigned char red, unsigned char green, unsigned char blue) {
+void neopixel_set(u8_t red, u8_t green, u8_t blue) {
     TRISD &= 0xFE;
     // Sends all the pixel data
-    for (unsigned char i = 0; i < NEO_PIXEL_COUNT * 3; i += 3) {
+    for (u8_t i = 0; i < NEO_PIXEL_COUNT * 3; i += 3) {
         neopixel_send_byte(green);
         neopixel_send_byte(red);
         neopixel_send_byte(blue);
     }
     wait_fractional(5);
+}
+
+
+/* ------ A/D Converter ------ */
+
+inline void ad_converter_init() {
+    ADCON2 = 0x85;
+    ADCON1 = 0x07;
+    ADCON0 = 0x01;
+}
+
+u16_t ad_converter_read(u8_t channel) {
+    ADCON0 = (u8_t) (channel << 2) | 0x01;
+    for (u8_t i = 0; i < 3; i++); // Wait a we bit
+    GODONE = 1;
+    while (GODONE); // Waits for conversion to finish
+    return ADRES;
+}
+
+
+/* ------ Serial ------ */
+
+void serial_init() {
+    // Turn on SCI interrupts at 9600 baud
+    TRISC |= 0xC0;
+    TXIE = 0;
+    RCIE = 1;
+    BRGH = 1;
+    BRG16 = 1;
+    SYNC = 0;
+    SPBRG = 255;
+    TXSTA = 0x22;
+    RCSTA = 0x90;
+}
+
+void serial_append(u8_t character) {
+    while (!TRMT);
+    TXREG = character;
+}
+
+void serial_append_int(i32_t integer, u8_t digits, u8_t decimal_digits) {
+    u8_t array[10], i;
+
+    if (integer < 0) {
+        serial_append('-');
+        integer = -integer;
+    }
+
+    for (i = 0; i < 10; i++) {
+        array[i] = integer % 10;
+        integer = integer / 10;
+    }
+
+    for (i = digits; i > 0; i--) {
+        if (i == decimal_digits) serial_append('.');
+        serial_append(array[i - 1] + '0');
+    }
+}
+
+void serial_append_all(u8_t *string) {
+    u8_t *ptr = string;
+    while (*ptr) {
+        serial_append(*ptr);
+        ptr++;
+    }
+}
+
+void serial_newline() {
+    serial_append(0x0D); // Carriage Return
+    serial_append(0x0A); // Line Feed
 }

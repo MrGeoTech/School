@@ -8,12 +8,24 @@
 #define LOOPS_PER_MS 1104
 #endif
 
+// Makes the types look similar to zigs types. This is easier to understand at a glance
+
+typedef signed char i8_t;
+typedef unsigned char u8_t;
+typedef signed short i16_t;
+typedef unsigned short u16_t;
+typedef signed long i32_t;
+typedef unsigned long u32_t;
+typedef signed long long i64_t;
+typedef unsigned long long u64_t;
+typedef float f32_t;
+
 /* ------ Time ------ */
 
 // Waits for the specified time in milliseconds
-void wait(unsigned int milliseconds);
+void wait(u16_t milliseconds);
 // Waits for LOOPS_PER_MS >> `shift` loops
-void wait_fractional(unsigned char shift);
+void wait_fractional(u8_t shift);
 
 /* ------ LCD ------ */
 
@@ -48,16 +60,17 @@ enum LCDCommand {
 // Initializes the LCD screen in 16x4 mode
 inline void lcd_init();
 // Sends an command to the LCD screen
-void lcd_send(unsigned char command);
+void lcd_send(u8_t command);
 // Moves the LCD cursor to the new row and column position
-void lcd_goto(unsigned char row, unsigned char column);
+void lcd_goto(u8_t row, u8_t column);
 // Appends the character to the LCD screen and moves the cursor over one
-void lcd_append(unsigned char character);
+void lcd_append(u8_t character);
 // Writes an integer out to the LCD screen
-void lcd_append_int(long int integer, unsigned char digits, unsigned char decimal_digits);
+// Warning: Does NOT behave the same as LCD_Out. You will get different output from that function
+void lcd_append_int(i32_t integer, u8_t digits, u8_t decimal_digits);
 // Writes out a string to the LCD.
 // This will automatically wrap at `len > 16` and will cut off anything over 32 characters
-void lcd_append_all(char *string);
+void lcd_append_all(u8_t *string);
 
 /* ------ Keypad ------ */
 
@@ -65,22 +78,22 @@ void lcd_append_all(char *string);
 // If there is no button being push, it will return 0
 // Otherwise, it will return the character being pushed
 // Priority is given in the order 1234567890#*
-char read_keypad(volatile unsigned char *port);
+char keypad_read(volatile u8_t *port);
 
 /* ------ Stepper Motor ------ */
 
 // Rotates the motor `steps` steps
 // There are 200 steps to a full rotation
-void rotate_full(volatile unsigned char *port, unsigned int steps, unsigned int ms_per_step);
+void rotate_full(volatile u8_t *port, u16_t steps, u16_t ms_per_step);
 // Roates the motor `steps` half steps
 // There are 400 half-steps for a full rotation
-void rotate_half(volatile unsigned char *port, unsigned int steps, unsigned int ms_per_step);
+void rotate_half(volatile u8_t *port, u16_t steps, u16_t ms_per_step);
 // Rotates the motor `steps` steps backwards
 // There are 200 steps to a full rotation
-void reverse_full(volatile unsigned char *port, unsigned int steps, unsigned int ms_per_step);
+void reverse_full(volatile u8_t *port, u16_t steps, u16_t ms_per_step);
 // Roates the motor `steps` half steps backwards
 // There are 400 half-steps for a full rotation
-void reverse_half(volatile unsigned char *port, unsigned int steps, unsigned int ms_per_step);
+void reverse_half(volatile u8_t *port, u16_t steps, u16_t ms_per_step);
 
 /* ------ Neo-Pixel ------ */
 
@@ -94,6 +107,42 @@ void reverse_half(volatile unsigned char *port, unsigned int steps, unsigned int
 
 // Sends the array `colors` out on PORTD pin 0 (since it's not being used by the LCD)
 // `colors` must be an array of at least `NEO_PIXEL_COUNT * 3` bytes
-void neopixel_send(unsigned char *colors);
+void neopixel_send(u8_t *colors);
 // Sets all the neopixels to the given RGB values
-void neopixel_set(unsigned char red, unsigned char green, unsigned char blue);
+void neopixel_set(u8_t red, u8_t green, u8_t blue);
+
+/* ------ A/D Converter ------ */
+
+enum ADChannel {
+    PORTA_0,
+    PORTA_1,
+    PORTA_2,
+    PORTA_3,
+    PORTA_5,
+    PORTE_0,
+    PORTE_1,
+    PORTE_2,
+    PORTB_2,
+    PORTB_3,
+    PORTB_1,
+    PORTB_4,
+    PORTB_0,
+};
+
+// Initializes the A/D converter with the default configuration
+inline void ad_converter_init();
+// Reads the A/D converter
+u16_t ad_converter_read(u8_t channel);
+
+/* ------ Serial ------ */
+
+// Initializes the serial interface
+void serial_init();
+// Sends a single character over the Serial Communications Interface (SCI)
+void serial_append(u8_t character);
+// Sends an integer as a string over the SCI
+void serial_append_int(i32_t integer, u8_t digits, u8_t decimal_digits);
+// Sends the string over the SCI
+void serial_append_all(u8_t *string);
+// Makes it so the next data sent over the SCI will be on a new line
+void serial_newline();

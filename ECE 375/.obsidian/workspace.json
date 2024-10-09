@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7249fa9850313145",
+            "id": "13afba9b84b88620",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Labs/Lab1/Lab1.md",
+                "file": "Class 8.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Labs/Lab1/Lab1.md",
+                "file": "Class 8.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Labs/Lab1/Lab1.md",
+                "file": "Class 8.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Labs/Lab1/Lab1.md"
+                "file": "Class 8.md"
               }
             }
           }
@@ -146,10 +146,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7249fa9850313145",
+  "active": "13afba9b84b88620",
   "lastOpenFiles": [
-    "Labs/Lab1/Lab1_Demonstration.mp4",
+    "Class 7.md",
+    "Class 6.md",
+    "Class 8.md",
+    "Class 10.md",
+    "Class 9.md",
+    "Class 11.md",
+    "Images/Class11_1.png",
     "Labs/Lab1/Lab1.md",
+    "Labs/Lab1/Lab1_Demonstration.mp4",
     "Labs/Lab1/Lab1_Demonstration.gif",
     "Labs/Lab1/PXL_20241004_231110209.TS.mp4",
     "Labs/Lab1/db/fsm.sgate_sm_bdd.nvd",
@@ -160,13 +167,8 @@
     "Labs/Lab1/db/fsm.eda.rpt.tmp",
     "Labs/Lab1/db/fsm.sta.rpt.tmp",
     "Labs/Lab1/db/fsm.sta.rdb.wrk",
-    "Class 10.md",
     "Images/Class10_2.png",
     "Images/Class10_1.png",
-    "Class 8.md",
-    "Class 7.md",
-    "Class 6.md",
-    "Class 9.md",
     "Labs/Lab1/Lab1_ModelSim.png",
     "Labs/Lab1/Lab1_Requirements.png",
     "Labs/PracticeLab/PracticeLab.md",
@@ -179,7 +181,6 @@
     "Class 1.md",
     "Class 2.md",
     "Class 3.md",
-    "Images/Class4_4.png",
     "Welcome.md"
   ]
 }
