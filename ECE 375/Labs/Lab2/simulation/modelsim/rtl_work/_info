@@ -1,0 +1,134 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/mrgeotech/School/ECE 375/Labs/Lab2/simulation/modelsim
+Ecounter
+Z1 w1729023010
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 1
+R0
+Z4 8/home/mrgeotech/School/ECE 375/Labs/Lab2/counter.vhd
+Z5 F/home/mrgeotech/School/ECE 375/Labs/Lab2/counter.vhd
+l0
+L5 1
+V`aBa>CZSkl_XNTmRIXPIO0
+!s100 0`FHEA_8T5H4BAN[;SoN03
+Z6 OV;C;2020.1;71
+31
+Z7 !s110 1729029005
+!i10b 1
+Z8 !s108 1729029005.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|/home/mrgeotech/School/ECE 375/Labs/Lab2/counter.vhd|
+Z10 !s107 /home/mrgeotech/School/ECE 375/Labs/Lab2/counter.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aarch
+R2
+R3
+DEx4 work 7 counter 0 22 `aBa>CZSkl_XNTmRIXPIO0
+!i122 1
+l14
+L11 21
+Vj>^RN@TKZcoQFRl:e5LG02
+!s100 R5FjLPTn^@XXhNH6:FlkO2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Efsm
+Z13 w1729022760
+R2
+R3
+!i122 2
+R0
+Z14 8/home/mrgeotech/School/ECE 375/Labs/Lab2/fsm.vhd
+Z15 F/home/mrgeotech/School/ECE 375/Labs/Lab2/fsm.vhd
+l0
+L4 1
+ViIV:>0Z?3NaL8b<635U5b3
+!s100 TKLX8V6[iO1RaRhMEhiQ>2
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|/home/mrgeotech/School/ECE 375/Labs/Lab2/fsm.vhd|
+Z17 !s107 /home/mrgeotech/School/ECE 375/Labs/Lab2/fsm.vhd|
+!i113 1
+R11
+R12
+Aarch
+R2
+R3
+DEx4 work 3 fsm 0 22 iIV:>0Z?3NaL8b<635U5b3
+!i122 2
+l12
+L10 50
+VlmZmb8XYGaf[@zeS^m5<i0
+!s100 97j82:3Iz`Mf<kbAdXLG03
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Etoplevel
+Z18 w1729030325
+R2
+R3
+!i122 3
+R0
+Z19 8/home/mrgeotech/School/ECE 375/Labs/Lab2/toplevel.vhd
+Z20 F/home/mrgeotech/School/ECE 375/Labs/Lab2/toplevel.vhd
+l0
+L4 1
+V:lT^B_>dZcS>?M6]WkjGP1
+!s100 L`jPzJ^;bY3Na1<TO=W]H1
+R6
+31
+!s110 1729030344
+!i10b 1
+!s108 1729030344.000000
+Z21 !s90 -reportprogress|300|-93|-work|work|/home/mrgeotech/School/ECE 375/Labs/Lab2/toplevel.vhd|
+Z22 !s107 /home/mrgeotech/School/ECE 375/Labs/Lab2/toplevel.vhd|
+!i113 1
+R11
+R12
+Aarch
+R2
+R3
+DEx4 work 8 toplevel 0 22 g>Jg5Obn6VGZ9TTaoD;lK1
+!i122 0
+l26
+L11 33
+VdD`g6]HPP_kGFQFhF2j2H0
+!s100 m7VIA3EO@FC6DHc6mz;9K2
+R6
+31
+R7
+!i10b 1
+R8
+R21
+R22
+!i113 1
+R11
+R12

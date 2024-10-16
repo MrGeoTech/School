@@ -1,0 +1,33 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "RED",
+					"strict" : false
+				},
+				{
+					"name" : "YELLOW",
+					"strict" : false
+				},
+				{
+					"name" : "GREEN",
+					"strict" : false
+				},
+				{
+					"name" : "RESET",
+					"strict" : false
+				},
+				{
+					"name" : "START",
+					"strict" : false
+				},
+				{
+					"name" : "EXTERN_CLOCK",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

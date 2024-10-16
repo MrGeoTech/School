@@ -67,9 +67,9 @@ We will now add a reset to the circuit. An asynchronous reset overrides the cloc
 process (CLK, CLRN)
 begin
 	-- Check CLRN first as it will have the highest priority
-	if (CLRN = '0') then
+	if CLRN = '0' then
 		Q <= '0';
-	elsif (CLK'event and CLK = '1') then
+	elsif CLK'event and CLK = '1' then
 		Q <= D;
 	end if;
 end process;
@@ -83,8 +83,8 @@ We will make it a synchronous reset, which means that the circuit will only chan
 process (CLK)
 begin
 	-- Check CLK first, then check if reset is triggered
-	if (CLK'event and CLK = '1') then
-		if (CLRN = '0') then
+	if CLK'event and CLK = '1' then
+		if CLRN = '0' then
 			Q <= '0';
 		else
 			Q <= D;
@@ -92,6 +92,3 @@ begin
 	end if;
 end process;
 ```
-
----
-

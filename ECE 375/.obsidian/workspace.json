@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "13afba9b84b88620",
+            "id": "5ceed49c84a04d18",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Class 8.md",
+                "file": "Class 12.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Class 8.md",
+                "file": "Class 12.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Class 8.md",
+                "file": "Class 12.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Class 8.md"
+                "file": "Class 12.md"
               }
             }
           }
@@ -146,37 +146,41 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "13afba9b84b88620",
+  "active": "5ceed49c84a04d18",
   "lastOpenFiles": [
+    "Labs/Lab2/db/toplevel.tmw_info",
+    "Labs/Lab2/db/toplevel.flow.rpt.tmp",
+    "Labs/Lab2/db/toplevel.eda.rpt.tmp",
+    "Labs/Lab2/db/toplevel.cmp.rdb.wrk",
+    "Labs/Lab2/db/toplevel.sta.rpt.tmp",
+    "Labs/Lab2/db/toplevel.sta.rdb.wrk",
+    "Labs/Lab2/db/toplevel.cycloneive_io_sim_cache.45um_ii_1200mv_85c_slow.hsd.wrk",
+    "Labs/Lab2/db/toplevel.cycloneive_io_sim_cache.45um_ff_1200mv_0c_fast.hsd.wrk",
+    "Labs/Lab2/db/toplevel.cycloneive_io_sim_cache.45um_ii_1200mv_0c_slow.hsd.wrk",
+    "Labs/Lab2/db/toplevel.tiscmp.slow_1200mv_0c.ddb",
+    "Labs/Lab2/db/toplevel.tiscmp.slow_1200mv_0c.ddb.wrk",
+    "Class 11.md",
+    "Class 12.md",
+    "Labs/Lab2/Lab2.md",
+    "Labs/Lab2/Lab2_Requirements.png",
+    "Labs/Lab2/Lab2_ModelSim.png",
+    "Class 13.md",
+    "Class 10.md",
+    "Labs/Lab1/Lab1.md",
+    "Images/Class12_1.png",
+    "Class 8.md",
     "Class 7.md",
     "Class 6.md",
-    "Class 8.md",
-    "Class 10.md",
     "Class 9.md",
-    "Class 11.md",
     "Images/Class11_1.png",
-    "Labs/Lab1/Lab1.md",
-    "Labs/Lab1/Lab1_Demonstration.mp4",
     "Labs/Lab1/Lab1_Demonstration.gif",
-    "Labs/Lab1/PXL_20241004_231110209.TS.mp4",
-    "Labs/Lab1/db/fsm.sgate_sm_bdd.nvd",
-    "Labs/Lab1/db/Lab1.quiproj.28601.rdr.flock",
-    "Labs/Lab1/fsm.qws",
-    "Labs/Lab1/db/fsm.cmp.rdb.wrk",
-    "Labs/Lab1/db/fsm.flow.rpt.tmp",
-    "Labs/Lab1/db/fsm.eda.rpt.tmp",
-    "Labs/Lab1/db/fsm.sta.rpt.tmp",
-    "Labs/Lab1/db/fsm.sta.rdb.wrk",
     "Images/Class10_2.png",
     "Images/Class10_1.png",
     "Labs/Lab1/Lab1_ModelSim.png",
     "Labs/Lab1/Lab1_Requirements.png",
     "Labs/PracticeLab/PracticeLab.md",
     "Images/Class8_1.png",
-    "Images/Class6_1.png",
     "Class 5.md",
-    "Labs/Lab1/Lab1_ModelSim.png",
-    "Images/Class5_1.png",
     "Class 4.md",
     "Class 1.md",
     "Class 2.md",

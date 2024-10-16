@@ -30,18 +30,18 @@ void send_lcd_inst() {
 }
 
 inline void lcd_init() {
-    TRISD = 0x00;
-    PORTD = 0xFF;
+    TRISD &= 0x01; // Set the top 7 bits as output
+    PORTD |= 0xFE; // Set the top 7 bits to on
     wait(20);
     // LCD initialization sequence
-    PORTD = 0x30;
+    PORTD &= 0x31;
     send_lcd_inst();
     wait(10); // Have to wait more than 4.1ms
     send_lcd_inst();
     wait(1); // Have to wait more than 100us
     send_lcd_inst();
     wait(1);
-    PORTD = 0x20;
+    PORTD &= 0x21;
     send_lcd_inst();
     wait(1);
 
@@ -52,9 +52,11 @@ inline void lcd_init() {
 }
 
 void lcd_send(u8_t command) {
-    PORTD = command & 0xF0;
+    PORTD &= 0x01; // Clears the top 7 bits of PORTD
+    PORTD |= command & 0xF0;
     send_lcd_inst();
-    PORTD = (command << 4) & 0xF0;
+    PORTD &= 0x01;
+    PORTD |= (command << 4) & 0xF0;
     send_lcd_inst();
 }
 
@@ -73,9 +75,11 @@ void lcd_goto(u8_t row, u8_t column) {
 }
 
 void lcd_append(u8_t character) {
-    PORTD = (character & 0xF0) | 0x04;
+    PORTD &= 0x01;
+    PORTD |= (character & 0xF0) | 0x04;
     send_lcd_inst();
-    PORTD = ((character << 4) & 0xF0) | 0x04;
+    PORTD &= 0x01;
+    PORTD |= ((character << 4) & 0xF0) | 0x04;
     send_lcd_inst();
 }
 
@@ -249,7 +253,7 @@ inline void ad_converter_init() {
     ADCON0 = 0x01;
 }
 
-u16_t ad_converter_read(u8_t channel) {
+u16_t ad_converter_read(enum ADChannel channel) {
     ADCON0 = (u8_t) (channel << 2) | 0x01;
     for (u8_t i = 0; i < 3; i++); // Wait a we bit
     GODONE = 1;

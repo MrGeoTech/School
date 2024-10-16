@@ -132,7 +132,8 @@ enum ADChannel {
 // Initializes the A/D converter with the default configuration
 inline void ad_converter_init();
 // Reads the A/D converter
-u16_t ad_converter_read(u8_t channel);
+// Note: The TRISx register has to be setup before calling this function
+u16_t ad_converter_read(enum ADChannel channel);
 
 /* ------ Serial ------ */
 

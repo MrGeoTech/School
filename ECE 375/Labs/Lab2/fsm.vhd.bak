@@ -1,0 +1,40 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity FSM is
+port(
+    CLOCK, RESET        : in  std_logic;
+    RED, YELLOW, GREEN  : out std_logic);
+end entity;
+
+architecture ARCH of FSM is
+signal STATE, NEXT_STATE : std_logic_vector(1 downto 0);
+begin
+    process (STATE, RED, YELLOW, GREEN)
+    begin
+        case (STATE) is
+        when 0 =>
+            RED <= '1';
+            YELLOW <= '0';
+            GREEN <= '0';
+            NEXT_STATE <= 1;
+        when 1 =>
+            RED <= '0';
+            YELLOW <= '1';
+            GREEN <= '0';
+            NEXT_STATE <= 2;
+        when 2 =>
+            RED <= '0';
+            YELLOW <= '0';
+            GREEN <= '1';
+            NEXT_STATE <= 0;
+        end case;
+    end process;
+
+    process (CLOCK)
+    begin
+        if rising_edge(CLOCK) then
+            STATE <= NEXT_STATE;
+        end if;
+    end process;
+end architecture;

@@ -1,0 +1,42 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity COUNTER is
+port (
+     CLOCK, RESET       : in  std_logic;
+     SWITCH_STATE, DONE : out std_logic);
+end entity;
+
+architecture ARCH of COUNTER is
+signal COUNT : std_logic_vector(29 downto 0);
+begin
+    process (CLOCK)
+    begin
+        if rising_edge(CLOCK) then
+            if RESET = '1' then
+                SWITCH_STATE <= '0';
+                DONE <= '0';
+                COUNT <= 0;
+            else
+                case (COUNT) is
+                when 50000000 =>
+                    SWITCH_STATE <= '1';
+                    DONE <= '0';
+                    COUNT <= COUNT + 1;
+                when 150000000 =>
+                    SWITCH_STATE <= '1';
+                    DONE <= '0';
+                    COUNT <= COUNT + 1;
+                when 300000000 =>
+                    SWITCH_STATE <= '1';
+                    DONE <= '1';
+                    COUNT <= 0;
+                when others =>
+                    SWITCH_STATE <= '0';
+                    DONE <= '0';
+                    COUNT <= COUNT + 1;
+                end case;
+            end if;
+        end if;
+    end process;
+end architecture;

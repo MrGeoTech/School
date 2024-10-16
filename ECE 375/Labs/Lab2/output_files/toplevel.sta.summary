@@ -1,0 +1,125 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'EXTERN_CLOCK'
+Slack : -4.854
+TNS   : -83.862
+
+Type  : Slow 1200mV 85C Model Setup 'RESET'
+Slack : -0.708
+TNS   : -0.893
+
+Type  : Slow 1200mV 85C Model Hold 'EXTERN_CLOCK'
+Slack : -0.583
+TNS   : -0.583
+
+Type  : Slow 1200mV 85C Model Hold 'RESET'
+Slack : 0.440
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'EXTERN_CLOCK'
+Slack : -0.931
+TNS   : -21.733
+
+Type  : Slow 1200mV 85C Model Recovery 'RESET'
+Slack : -0.571
+TNS   : -1.713
+
+Type  : Slow 1200mV 85C Model Removal 'EXTERN_CLOCK'
+Slack : 0.199
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'RESET'
+Slack : 0.718
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'EXTERN_CLOCK'
+Slack : -3.000
+TNS   : -68.535
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'RESET'
+Slack : -3.000
+TNS   : -6.855
+
+Type  : Slow 1200mV 0C Model Setup 'EXTERN_CLOCK'
+Slack : -4.268
+TNS   : -70.695
+
+Type  : Slow 1200mV 0C Model Setup 'RESET'
+Slack : -0.546
+TNS   : -0.611
+
+Type  : Slow 1200mV 0C Model Hold 'EXTERN_CLOCK'
+Slack : -0.432
+TNS   : -0.432
+
+Type  : Slow 1200mV 0C Model Hold 'RESET'
+Slack : 0.387
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'EXTERN_CLOCK'
+Slack : -0.725
+TNS   : -16.820
+
+Type  : Slow 1200mV 0C Model Recovery 'RESET'
+Slack : -0.544
+TNS   : -1.632
+
+Type  : Slow 1200mV 0C Model Removal 'EXTERN_CLOCK'
+Slack : 0.396
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'RESET'
+Slack : 0.627
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'EXTERN_CLOCK'
+Slack : -3.000
+TNS   : -68.535
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'RESET'
+Slack : -3.000
+TNS   : -6.855
+
+Type  : Fast 1200mV 0C Model Setup 'EXTERN_CLOCK'
+Slack : -2.004
+TNS   : -35.336
+
+Type  : Fast 1200mV 0C Model Setup 'RESET'
+Slack : 0.197
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'EXTERN_CLOCK'
+Slack : -0.514
+TNS   : -8.623
+
+Type  : Fast 1200mV 0C Model Hold 'RESET'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'EXTERN_CLOCK'
+Slack : -0.775
+TNS   : -18.634
+
+Type  : Fast 1200mV 0C Model Recovery 'RESET'
+Slack : 0.337
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'EXTERN_CLOCK'
+Slack : -0.243
+TNS   : -4.336
+
+Type  : Fast 1200mV 0C Model Removal 'RESET'
+Slack : 0.464
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'EXTERN_CLOCK'
+Slack : -3.000
+TNS   : -54.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'RESET'
+Slack : -3.000
+TNS   : -6.336
+
+------------------------------------------------------------
