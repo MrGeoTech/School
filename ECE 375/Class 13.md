@@ -15,4 +15,9 @@ There are many different types of hardware, including ASIC (Application Specific
 ##### CPLD
 - Complex Programmable Logic Device
 - Many PAL/PLA inside
-- 
+
+The last three use configurable interconnects to create logic.
+
+To connect between the logic and I/O pins, you have to use macro cells.
+
+![](Images/Class13_0.png)

@@ -11,42 +11,42 @@ use ieee.std_logic_1164.all;
 
 entity TOPLEVEL is
 port (
-     EXTERN_CLOCK, RESET, START : in  std_logic;
-     RED, YELLOW, GREEN  : out std_logic);
+    EXTERN_CLOCK, RESET, START : in  std_logic;
+    RED, YELLOW, GREEN : out std_logic);
 end entity;
 
 architecture ARCH of TOPLEVEL is
 signal INTERN_CLOCK, FSM_CLOCK, DONE, ENABLED : std_logic;
+
 component COUNTER is
 port (
-     CLOCK, RESET       : in  std_logic;
-     SWITCH_STATE, DONE : out std_logic);
+     CLOCK, RESET : in  std_logic;
+     DONE         : out std_logic);
 end component;
+
 component FSM is
 port(
-    CLOCK, RESET        : in  std_logic;
-    RED, YELLOW, GREEN  : out std_logic);
+    CLOCK, RESET                : in  std_logic;
+    RED, YELLOW, GREEN, ENABLED : out std_logic);
 end component;
 
 begin
-    process (START, DONE)
-	begin
-        if (START or DONE) = '1' then
-            ENABLED <= START;
-        end if;
-    end process;
-
-    process (EXTERN_CLOCK)
+    INTERN_CLOCK <= EXTERN_CLOCK and ENABLED;
+	 
+    process (RESET, START, DONE)
     begin
-        if ENABLED = '1' then
-            INTERN_CLOCK <= EXTERN_CLOCK;
+        if RESET = '1' then
+            FSM_CLOCK <= '0';
+        elsif START = '0' then -- Pushbuttons are active-low
+            FSM_CLOCK <= '1';
+        else
+            FSM_CLOCK <= DONE;
         end if;
     end process;
 
     COUNTER_1 : COUNTER port map(
         CLOCK => INTERN_CLOCK,
         RESET => RESET,
-        SWITCH_STATE => FSM_CLOCK,
         DONE => DONE
     );
 
@@ -55,7 +55,8 @@ begin
         RESET => RESET,
         RED => RED,
         YELLOW => YELLOW,
-        GREEN => GREEN
+        GREEN => GREEN,
+        ENABLED => ENABLED
     );
 end architecture;
 ```
@@ -64,41 +65,29 @@ end architecture;
 library ieee;
 use ieee.std_logic_1164.all;
 
+-- Counts every second
 entity COUNTER is
 port (
-     CLOCK, RESET       : in  std_logic;
-     SWITCH_STATE, DONE : out std_logic);
+     CLOCK, RESET : in  std_logic;
+     DONE         : out std_logic);
 end entity;
 
 architecture ARCH of COUNTER is
-signal COUNT : integer range 0 to 300000000;
+constant MAX_COUNT : integer := 25000000;
+signal COUNT, NEXT_COUNT : integer range 0 to MAX_COUNT := 0;
 begin
-    process (CLOCK)
+    process (RESET, CLOCK)
     begin
-        if rising_edge(CLOCK) then
-            if RESET = '1' then
-                SWITCH_STATE <= '0';
-                DONE <= '0';
-                COUNT <= 0;
+        if RESET = '1' then
+            NEXT_COUNT <= 0;
+        elsif rising_edge(CLOCK) then
+		      COUNT <= NEXT_COUNT;
+            if COUNT = MAX_COUNT then
+                DONE <= '1';
+                NEXT_COUNT <= 0;
             else
-                case (COUNT) is
-                when 50000000 =>
-                    SWITCH_STATE <= '1';
-                    DONE <= '0';
-                    COUNT <= COUNT + 1;
-                when 150000000 =>
-                    SWITCH_STATE <= '1';
-                    DONE <= '0';
-                    COUNT <= COUNT + 1;
-                when 300000000 =>
-                    SWITCH_STATE <= '1';
-                    DONE <= '1';
-                    COUNT <= 0;
-                when others =>
-                    SWITCH_STATE <= '0';
-                    DONE <= '0';
-                    COUNT <= COUNT + 1;
-                end case;
+                DONE <= '0';
+                NEXT_COUNT <= COUNT + 1;
             end if;
         end if;
     end process;
@@ -111,37 +100,60 @@ use ieee.std_logic_1164.all;
 
 entity FSM is
 port(
-    CLOCK, RESET        : in  std_logic;
-    RED, YELLOW, GREEN  : out std_logic);
+    CLOCK, RESET                : in  std_logic;
+    RED, YELLOW, GREEN, ENABLED : out std_logic);
 end entity;
 
 architecture ARCH of FSM is
-signal STATE, NEXT_STATE : integer range 0 to 2;
+signal STATE, NEXT_STATE : integer range 0 to 5 := 0;
 begin
     process (STATE)
     begin
         case (STATE) is
         when 0 =>
+            ENABLED <= '0';
+            NEXT_STATE <= 1;
             RED <= '1';
             YELLOW <= '0';
             GREEN <= '0';
-            NEXT_STATE <= 1;
         when 1 =>
+            ENABLED <= '1';
+            NEXT_STATE <= 2;
             RED <= '0';
             YELLOW <= '1';
             GREEN <= '0';
-            NEXT_STATE <= 2;
         when 2 =>
+            ENABLED <= '1';
+            NEXT_STATE <= 3;
+            RED <= '0';
+            YELLOW <= '1';
+            GREEN <= '0';
+        when 3 =>
+            ENABLED <= '1';
+            NEXT_STATE <= 4;
             RED <= '0';
             YELLOW <= '0';
             GREEN <= '1';
+        when 4 =>
+            ENABLED <= '1';
+            NEXT_STATE <= 5;
+            RED <= '0';
+            YELLOW <= '0';
+            GREEN <= '1';
+        when 5 =>
+            ENABLED <= '1';
             NEXT_STATE <= 0;
+            RED <= '0';
+            YELLOW <= '0';
+            GREEN <= '1';
         end case;
     end process;
 
-    process (CLOCK)
+    process (RESET, CLOCK)
     begin
-        if rising_edge(CLOCK) then
+        if RESET = '1' then
+            STATE <= 0;
+        elsif rising_edge(CLOCK) then
             STATE <= NEXT_STATE;
         end if;
     end process;
@@ -149,6 +161,7 @@ end architecture;
 ```
 
 ### ModelSim
+*Note: Changed counter max count to be simulatable*
 
 ![](Lab2_ModelSim.png)
 
