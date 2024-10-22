@@ -11,10 +11,14 @@
             "id": "7e45234f95be56e4",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Homeworks/HW03.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "HW03"
             }
           }
         ]
@@ -158,7 +162,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7e45234f95be56e4",
+  "active": "f674d083f35ba925",
   "lastOpenFiles": [
     "Homeworks/HW07.md",
     "Projects/testc/serial.log~",

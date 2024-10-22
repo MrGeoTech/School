@@ -167,3 +167,8 @@ end architecture;
 
 ### FPGA Verification
 
+##### Testing Reset
+![](Lab2_1.gif)
+
+#### Testing "Traffic Lights"
+![](Lab2_2.gif)
