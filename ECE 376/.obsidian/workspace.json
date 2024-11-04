@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7e45234f95be56e4",
+            "id": "72562454dfc0100b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Homeworks/HW03.md",
+                "file": "Homeworks/HW08.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HW03"
+              "title": "HW08"
             }
           }
         ]
@@ -162,36 +162,39 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f674d083f35ba925",
+  "active": "72562454dfc0100b",
   "lastOpenFiles": [
-    "Homeworks/HW07.md",
-    "Projects/testc/serial.log~",
-    "Projects/testc/4913",
-    "Projects/testc/serial.log",
-    "Projects/testc/serial_to_file.sh~",
-    "Projects/testc/serial_to_file.sh",
-    "Projects/testc/main.c~",
+    "Homeworks/Images/HW08_2.gif",
+    "Homeworks/Images/HW08_1.gif",
+    "Homeworks/Images/HW08_1.mp4",
+    "Homeworks/Images/HW08_2.mp4",
+    "Homeworks/Images/PXL_20241104_222551825.TS.mp4",
+    "Homeworks/Images/PXL_20241104_221214246.TS.mp4",
     "Projects/testc/build/default/production/main.p1.d.tmp",
     "Projects/testc/build/default/production/main.p1.d",
     "Projects/testc/build/default/production/main.p1.out",
     "Projects/testc/build/default/production/main.p1",
+    "Projects/testc/build/default/production/main.i-ade25635",
+    "Projects/testc/main.c~",
     "Homeworks/HW06.md",
+    "Homeworks/HW05.md",
+    "Homeworks/HW04.md",
+    "Homeworks/HW03.md",
+    "Homeworks/HW02.md",
+    "Homeworks/HW08.md",
+    "Homeworks/HW07.md",
+    "Images.md",
+    "Homeworks/Images/HW08_2.svg",
+    "Homeworks/Images/HW08_1.svg",
     "Class 5.md",
     "Class 1.md",
     "Homeworks/Images/HW06_1.gif",
     "Homeworks/Images/HW06_1-old.gif",
     "Homeworks/Images/HW06_1.png",
-    "Homeworks/HW05.md",
     "Homeworks/Images/HW05_5.gif",
     "Homeworks/Images/HW05_4.gif",
     "Homeworks/Images/HW05_3.gif",
     "Homeworks/Images/HW05_2.gif",
-    "Homeworks/Images/HW05_1.gif",
-    "Pasted image 20241007140346.png",
-    "Homeworks/HW02.md",
-    "Homeworks/HW03.md",
-    "Homeworks/HW04.md",
-    "Homeworks/Images/HW05_2.png",
     "Class 4.md",
     "Class 2.md",
     "Class 3.md",

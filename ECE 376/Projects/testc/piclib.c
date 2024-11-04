@@ -313,3 +313,26 @@ void serial_newline() {
     serial_append(0x0D); // Carriage Return
     serial_append(0x0A); // Line Feed
 }
+
+/* ------ Timer2 ------ */
+
+void timers_enable() {
+    GIE = 1;
+}
+
+void timers_disable() {
+    GIE = 0;
+}
+
+void timer2_init(u8_t a, u8_t b, u8_t c) {
+    T2CON = 0x04 | (0x0F & a) | (0x03 & c);
+    PR2 = b;
+    TMR2IE = 1;
+    PEIE = 1;
+    TMR2ON = 1;
+    TMR2IP = 1;
+}
+
+void timer2_end() {
+    TMR2IF = 0;
+}

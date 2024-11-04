@@ -147,3 +147,14 @@ void serial_append_int(i32_t integer, u8_t digits, u8_t decimal_digits);
 void serial_append_all(u8_t *string);
 // Makes it so the next data sent over the SCI will be on a new line
 void serial_newline();
+
+/* ------ Timer ------ */
+
+// Enables all timer interrupts
+void timers_enable();
+// Stops and disables all timer interrupts
+void timers_disable();
+// Initializes the timer2 interrupt system
+void timer2_init(u8_t a, u8_t b, u8_t c);
+// Should be called at the end of the interrupt to return system to normal state
+void timer2_end();
