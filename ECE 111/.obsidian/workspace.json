@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ee57be70c6786820",
+            "id": "9a947122208d53e3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HW04.md",
+                "file": "HW05.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HW04"
+              "title": "HW05"
             }
           }
         ]
@@ -162,18 +162,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ee57be70c6786820",
+  "active": "cf44f43347402c63",
   "lastOpenFiles": [
-    "HW03.md",
+    "Images/HW05_2.png",
+    "HW01.md",
+    "Pasted image 20241105121712.png",
+    "Pasted image 20241105121709.png",
+    "Pasted image 20241105121708.png",
+    "Images/HW05_1.png",
+    "HW05.md",
     "HW04.md",
+    "HW03.md",
     "Images/HW04_2.png",
     "Images/HW04_1.png",
     "Images/HW03_2.png",
     "Images/HW03_1.png",
     "HW02.md",
-    "HW01.md",
     "Images/HW02_2.png",
-    "Images/HW02_1.png",
-    "Images/HW01_1.png"
+    "Images/HW02_1.png"
   ]
 }
