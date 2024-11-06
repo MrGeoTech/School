@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "413b40c73dc763df",
+        "id": "7a49aa3650edc350",
         "type": "tabs",
         "children": [
           {
-            "id": "fc8daedc17e7dbb2",
+            "id": "a8173f6a828270f8",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -158,7 +158,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fc8daedc17e7dbb2",
+  "active": "a8173f6a828270f8",
   "lastOpenFiles": [
     "Homeworks/HW08.md",
     "Homeworks/Images/HW08_2.gif",

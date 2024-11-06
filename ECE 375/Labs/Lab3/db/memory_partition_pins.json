@@ -1,0 +1,81 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Memout[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Memout[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Memout[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Memout[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Memout[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Memout[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ReadAddr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ReadAddr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Memin[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "WriteAddr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Ld",
+					"strict" : false
+				},
+				{
+					"name" : "WriteAddr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Memin[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Memin[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Memin[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Memin[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Memin[5]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

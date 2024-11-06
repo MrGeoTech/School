@@ -1,0 +1,56 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/mrgeotech/Shared/School/ECE 375/Labs/Lab3/simulation/modelsim
+Ememory
+Z1 w1730850226
+Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 4
+R0
+Z6 8/home/mrgeotech/Shared/School/ECE 375/Labs/Lab3/memory.vhd
+Z7 F/home/mrgeotech/Shared/School/ECE 375/Labs/Lab3/memory.vhd
+l0
+L5 1
+V20`5Ea`:BQzZmOk`B;lC]2
+!s100 hm^l0?G=]naGoJcc>O77h3
+Z8 OV;C;2020.1;71
+31
+Z9 !s110 1730850242
+!i10b 1
+Z10 !s108 1730850241.000000
+Z11 !s90 -reportprogress|300|-93|-work|work|/home/mrgeotech/Shared/School/ECE 375/Labs/Lab3/memory.vhd|
+Z12 !s107 /home/mrgeotech/Shared/School/ECE 375/Labs/Lab3/memory.vhd|
+!i113 1
+Z13 o-93 -work work
+Z14 tExplicit 1 CvgOpt 0
+Aarch
+R2
+R3
+R4
+R5
+Z15 DEx4 work 6 memory 0 22 20`5Ea`:BQzZmOk`B;lC]2
+!i122 4
+l25
+L16 62
+VROAiC][BBV@52ARLz5oJ^2
+!s100 bK;^4H@Ni<DOeZJR2Qe941
+R8
+31
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
