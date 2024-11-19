@@ -317,6 +317,7 @@ void serial_newline() {
 /* ------ Timer2 ------ */
 
 void timers_enable() {
+    PEIE = 1;
     GIE = 1;
 }
 
@@ -324,15 +325,28 @@ void timers_disable() {
     GIE = 0;
 }
 
+void timers_end() {
+    TMR0IF = 0;
+    TMR1IF = 0;
+    TMR2IF = 0;
+    TMR3IF = 0;
+    CCP1IF = 0;
+    CCP2IF = 0;
+}
+
+void timer0_init(u8_t ps, u16_t y, u8_t input) {
+    T0CON = 0x80 | ps;
+    T0CS = input;
+    TMR0 = -y;
+    TMR0IE = 1;
+    TMR0ON = 1;
+    TMR0IP = 1;
+}
+
 void timer2_init(u8_t a, u8_t b, u8_t c) {
     T2CON = 0x04 | (0x0F & a) | (0x03 & c);
     PR2 = b;
     TMR2IE = 1;
-    PEIE = 1;
     TMR2ON = 1;
     TMR2IP = 1;
-}
-
-void timer2_end() {
-    TMR2IF = 0;
 }

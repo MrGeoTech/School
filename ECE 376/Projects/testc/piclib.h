@@ -154,7 +154,25 @@ void serial_newline();
 void timers_enable();
 // Stops and disables all timer interrupts
 void timers_disable();
+// Should be called at the end of the interrupt to return system to normal state
+void timers_end();
+// Initializes the timer0 interrupt system
+void timer0_init(u8_t ps, u16_t y, u8_t input);
 // Initializes the timer2 interrupt system
 void timer2_init(u8_t a, u8_t b, u8_t c);
-// Should be called at the end of the interrupt to return system to normal state
-void timer2_end();
+
+enum T1_CAPTURE_RATE {
+    FALLING_EDGE,
+    RISING_EDGE,
+    RISING_EDGE_4,
+    RISING_EDGE_16
+};
+
+// Enables the first timer 1 capture
+void t1capture1_enable(enum T1_CAPTURE_RATE config);
+// Disables the first timer 1 capture
+void t1capture1_disable();
+// Enables the second timer 1 capture
+void t1capture2_enable(enum T1_CAPTURE_RATE config);
+// Disables the second timer 1 capture
+void t1capture2_disable();
