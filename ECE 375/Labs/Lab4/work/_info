@@ -1,0 +1,85 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 d/home/mrgeotech/School/ECE 375/Labs/Lab4
+T_opt
+!s110 1732324713
+V1`z5Hi@ZoYJX1ef>U8JJn3
+04 10 4 work multiplier arch 1
+=1-244bfe5ca49d-67412d69-478fd-64a2
+R1
+!s12b OEM100
+!s124 OEM10U1 
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0
+n@_opt
+OL;O;2023.3;77
+R2
+Emultiplier
+Z3 w1732324992
+Z4 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
+Z5 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z6 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 18
+R2
+Z7 8/home/mrgeotech/School/ECE 375/Labs/Lab4/multiplier.vhd
+Z8 F/home/mrgeotech/School/ECE 375/Labs/Lab4/multiplier.vhd
+l0
+L5 1
+V;]bc7Vh7Gme=S4UR;DC<03
+!s100 8CA7DzX5hOEU4diLSzMGL0
+Z9 OL;C;2023.3;77
+32
+!s110 1732325017
+!i10b 1
+!s108 1732325017.000000
+Z10 !s90 -reportprogress|300|/home/mrgeotech/School/ECE 375/Labs/Lab4/multiplier.vhd|
+Z11 !s107 /home/mrgeotech/School/ECE 375/Labs/Lab4/multiplier.vhd|
+!i113 0
+Z12 tExplicit 1 CvgOpt 0
+Aarch
+R4
+R5
+R6
+DEx4 work 10 multiplier 0 22 ;]bc7Vh7Gme=S4UR;DC<03
+!i122 17
+l28
+L18 80
+VEi<H7`STLLV8@[^1Um5Ii2
+!s100 380]7c<B8QZIkLc6WCW;[3
+R9
+32
+!s110 1732324710
+!i10b 1
+!s108 1732324710.000000
+R10
+R11
+!i113 0
+R12
