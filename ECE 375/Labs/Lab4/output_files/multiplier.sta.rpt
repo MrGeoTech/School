@@ -1,5 +1,5 @@
 Timing Analyzer report for multiplier
-Fri Nov 22 20:10:59 2024
+Mon Nov 25 12:57:43 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -96,18 +96,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 16          ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.08        ;
-; Maximum used               ; 16          ;
+; Average used               ; 1.10        ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.5%      ;
-;     Processor 3            ;   1.3%      ;
-;     Processor 4            ;   1.2%      ;
-;     Processors 5-16        ;   0.3%      ;
+;     Processor 2            ;   2.9%      ;
+;     Processor 3            ;   2.2%      ;
+;     Processor 4            ;   1.5%      ;
+;     Processors 5-12        ;   0.4%      ;
 +----------------------------+-------------+
 
 
@@ -125,7 +125,7 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+------------+---------------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
 +------------+-----------------+------------+---------------------------------------------------------------+
-; 266.31 MHz ; 250.0 MHz       ; CLOCKN     ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 271.44 MHz ; 250.0 MHz       ; CLOCKN     ; limit due to minimum period restriction (max I/O toggle rate) ;
 +------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -141,7 +141,7 @@ HTML report is unavailable in plain text report export.
 +--------+--------+-------------------+
 ; Clock  ; Slack  ; End Point TNS     ;
 +--------+--------+-------------------+
-; CLOCKN ; -2.755 ; -47.976           ;
+; CLOCKN ; -2.684 ; -41.340           ;
 +--------+--------+-------------------+
 
 
@@ -180,106 +180,106 @@ No paths to report.
 +--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node           ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
-; -2.755 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 3.722      ;
-; -2.715 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 3.682      ;
-; -2.628 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 3.595      ;
-; -2.623 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 3.590      ;
-; -2.496 ; AS_SELECTOR         ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.143     ; 3.371      ;
-; -2.484 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 3.451      ;
-; -2.473 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 3.440      ;
-; -2.456 ; AS_SELECTOR         ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.143     ; 3.331      ;
-; -2.419 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 3.386      ;
-; -2.369 ; AS_SELECTOR         ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.143     ; 3.244      ;
-; -2.364 ; AS_SELECTOR         ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.143     ; 3.239      ;
-; -2.351 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 3.318      ;
-; -2.225 ; AS_SELECTOR         ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.143     ; 3.100      ;
-; -2.225 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 3.145      ;
-; -2.214 ; AS_SELECTOR         ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.143     ; 3.089      ;
-; -2.204 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 3.171      ;
-; -2.185 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 3.105      ;
-; -2.160 ; AS_SELECTOR         ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.143     ; 3.035      ;
-; -2.109 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 3.029      ;
-; -2.098 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 3.018      ;
-; -2.093 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 3.013      ;
-; -2.092 ; AS_SELECTOR         ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.143     ; 2.967      ;
-; -2.079 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.097     ; 3.000      ;
-; -2.063 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.983      ;
-; -2.039 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.097     ; 2.960      ;
-; -2.037 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 3.004      ;
-; -2.023 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.943      ;
-; -2.010 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.097     ; 2.931      ;
-; -2.007 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.927      ;
-; -1.997 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.964      ;
-; -1.976 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.896      ;
-; -1.954 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.874      ;
-; -1.952 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.097     ; 2.873      ;
-; -1.947 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.097     ; 2.868      ;
-; -1.945 ; AS_SELECTOR         ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.143     ; 2.820      ;
-; -1.943 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.863      ;
-; -1.938 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.097     ; 2.859      ;
-; -1.936 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.856      ;
-; -1.931 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.851      ;
-; -1.913 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.880      ;
-; -1.910 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.877      ;
-; -1.905 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.872      ;
-; -1.889 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.809      ;
-; -1.880 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.800      ;
-; -1.879 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.799      ;
-; -1.875 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.795      ;
-; -1.871 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.097     ; 2.792      ;
-; -1.869 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.097     ; 2.790      ;
-; -1.867 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.834      ;
-; -1.845 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.765      ;
-; -1.844 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.764      ;
-; -1.836 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.085     ; 2.769      ;
-; -1.827 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.794      ;
-; -1.821 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.741      ;
-; -1.810 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.777      ;
-; -1.797 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.717      ;
-; -1.792 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.712      ;
-; -1.781 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.701      ;
-; -1.766 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.733      ;
-; -1.757 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.677      ;
-; -1.755 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.722      ;
-; -1.746 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.666      ;
-; -1.746 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.666      ;
-; -1.746 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.097     ; 2.667      ;
-; -1.744 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.711      ;
-; -1.743 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.097     ; 2.664      ;
-; -1.740 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.707      ;
-; -1.739 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.097     ; 2.660      ;
-; -1.738 ; STATE[2]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.148      ; 2.904      ;
-; -1.735 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.702      ;
-; -1.733 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.700      ;
-; -1.731 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.651      ;
-; -1.727 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.647      ;
-; -1.725 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.645      ;
-; -1.712 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.632      ;
-; -1.712 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.632      ;
-; -1.701 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.668      ;
-; -1.693 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.660      ;
-; -1.690 ; AS_SELECTOR         ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.143     ; 2.565      ;
-; -1.683 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.650      ;
-; -1.683 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.650      ;
-; -1.678 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.645      ;
-; -1.674 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.594      ;
-; -1.665 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.098     ; 2.585      ;
-; -1.651 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.618      ;
-; -1.649 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.616      ;
-; -1.649 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.616      ;
-; -1.640 ; STATE[1]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.148      ; 2.806      ;
-; -1.633 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.600      ;
-; -1.606 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.573      ;
-; -1.606 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.573      ;
-; -1.601 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.568      ;
-; -1.596 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.563      ;
-; -1.585 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.552      ;
-; -1.566 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.533      ;
-; -1.550 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.517      ;
-; -1.539 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.506      ;
-; -1.531 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.498      ;
-; -1.528 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.495      ;
-; -1.524 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.051     ; 2.491      ;
+; -2.684 ; AS_SELECTOR         ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.071      ; 3.773      ;
+; -2.660 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 3.628      ;
+; -2.642 ; AS_SELECTOR         ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.071      ; 3.731      ;
+; -2.556 ; AS_SELECTOR         ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.071      ; 3.645      ;
+; -2.551 ; AS_SELECTOR         ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.071      ; 3.640      ;
+; -2.513 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 3.481      ;
+; -2.431 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 3.399      ;
+; -2.416 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 3.384      ;
+; -2.412 ; AS_SELECTOR         ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.071      ; 3.501      ;
+; -2.397 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 3.365      ;
+; -2.394 ; AS_SELECTOR         ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.071      ; 3.483      ;
+; -2.380 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 3.348      ;
+; -2.347 ; AS_SELECTOR         ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.071      ; 3.436      ;
+; -2.299 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 3.267      ;
+; -2.279 ; AS_SELECTOR         ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.071      ; 3.368      ;
+; -2.256 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 3.224      ;
+; -2.132 ; AS_SELECTOR         ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.071      ; 3.221      ;
+; -2.055 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 3.198      ;
+; -2.054 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 3.146      ;
+; -2.026 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.994      ;
+; -2.012 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 3.104      ;
+; -1.984 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.952      ;
+; -1.938 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 3.081      ;
+; -1.929 ; AS_SELECTOR         ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.022     ; 2.925      ;
+; -1.926 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 3.018      ;
+; -1.925 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 3.017      ;
+; -1.921 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 3.013      ;
+; -1.898 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.866      ;
+; -1.895 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.863      ;
+; -1.893 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.861      ;
+; -1.893 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 3.036      ;
+; -1.890 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.858      ;
+; -1.890 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.858      ;
+; -1.883 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.975      ;
+; -1.853 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.821      ;
+; -1.851 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 2.994      ;
+; -1.831 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 2.974      ;
+; -1.826 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 2.969      ;
+; -1.811 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 2.954      ;
+; -1.805 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 2.948      ;
+; -1.799 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.891      ;
+; -1.797 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.889      ;
+; -1.793 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.761      ;
+; -1.792 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 2.935      ;
+; -1.792 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.884      ;
+; -1.782 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.750      ;
+; -1.782 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.874      ;
+; -1.767 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.735      ;
+; -1.765 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 2.908      ;
+; -1.764 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.856      ;
+; -1.762 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.730      ;
+; -1.760 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 2.903      ;
+; -1.754 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.722      ;
+; -1.747 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.203     ; 2.562      ;
+; -1.743 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 2.886      ;
+; -1.736 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.704      ;
+; -1.733 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.701      ;
+; -1.717 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.809      ;
+; -1.708 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.800      ;
+; -1.699 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 2.842      ;
+; -1.699 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 2.842      ;
+; -1.694 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 2.837      ;
+; -1.691 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.659      ;
+; -1.689 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.657      ;
+; -1.676 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.644      ;
+; -1.665 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.633      ;
+; -1.661 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.629      ;
+; -1.660 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.628      ;
+; -1.660 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.752      ;
+; -1.653 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.745      ;
+; -1.651 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 2.794      ;
+; -1.649 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.741      ;
+; -1.635 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.727      ;
+; -1.627 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.595      ;
+; -1.623 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.591      ;
+; -1.621 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.589      ;
+; -1.618 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.710      ;
+; -1.611 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.579      ;
+; -1.605 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.573      ;
+; -1.605 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.573      ;
+; -1.600 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.568      ;
+; -1.598 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.566      ;
+; -1.588 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.680      ;
+; -1.580 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.672      ;
+; -1.575 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.667      ;
+; -1.570 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.662      ;
+; -1.569 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.537      ;
+; -1.568 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 2.711      ;
+; -1.566 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 2.709      ;
+; -1.558 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.526      ;
+; -1.556 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.125      ; 2.699      ;
+; -1.553 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.521      ;
+; -1.548 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.516      ;
+; -1.543 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.511      ;
+; -1.536 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.628      ;
+; -1.529 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.497      ;
+; -1.527 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.074      ; 2.619      ;
+; -1.519 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.487      ;
+; -1.517 ; PARTIAL_PRODUCT[15] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.485      ;
+; -1.515 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.050     ; 2.483      ;
 +--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -289,105 +289,105 @@ No paths to report.
 ; Slack ; From Node           ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
 ; 0.440 ; STATE[0]            ; STATE[0]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 0.669      ;
-; 0.440 ; STATE[2]            ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; STATE[1]            ; STATE[1]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 0.669      ;
-; 0.440 ; ACTIVE              ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; AS_SELECTOR         ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; STATE[2]            ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; PARTIAL_PRODUCT[7]  ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 0.669      ;
-; 0.482 ; PARTIAL_PRODUCT[6]  ; PARTIAL_PRODUCT[5]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 0.718      ;
-; 0.605 ; PARTIAL_PRODUCT[5]  ; PARTIAL_PRODUCT[4]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 0.841      ;
-; 0.606 ; PARTIAL_PRODUCT[3]  ; PARTIAL_PRODUCT[2]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 0.842      ;
-; 0.676 ; STATE[1]            ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.049      ; 0.911      ;
-; 0.685 ; STATE[0]            ; STATE[1]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.049      ; 0.920      ;
-; 0.686 ; STATE[0]            ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.049      ; 0.921      ;
-; 0.692 ; PARTIAL_PRODUCT[2]  ; PARTIAL_PRODUCT[1]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 0.928      ;
-; 0.692 ; PARTIAL_PRODUCT[4]  ; PARTIAL_PRODUCT[3]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 0.928      ;
-; 0.725 ; ACTIVE              ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.048      ; 0.959      ;
-; 0.904 ; ACTIVE              ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.143      ; 1.233      ;
-; 1.053 ; ACTIVE              ; PARTIAL_PRODUCT[0]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.085      ; 1.324      ;
-; 1.149 ; ACTIVE              ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.085      ; 1.420      ;
-; 1.149 ; ACTIVE              ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.085      ; 1.420      ;
-; 1.151 ; ACTIVE              ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.085      ; 1.422      ;
-; 1.152 ; ACTIVE              ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.085      ; 1.423      ;
-; 1.153 ; ACTIVE              ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.085      ; 1.424      ;
-; 1.154 ; ACTIVE              ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.085      ; 1.425      ;
-; 1.154 ; ACTIVE              ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.085      ; 1.425      ;
-; 1.155 ; ACTIVE              ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.085      ; 1.426      ;
-; 1.155 ; ACTIVE              ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.085      ; 1.426      ;
-; 1.168 ; ACTIVE              ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.078     ; 1.276      ;
-; 1.170 ; ACTIVE              ; STATE[1]            ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.078     ; 1.278      ;
-; 1.171 ; ACTIVE              ; STATE[0]            ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.078     ; 1.279      ;
-; 1.226 ; PARTIAL_PRODUCT[7]  ; PARTIAL_PRODUCT[6]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.033     ; 1.379      ;
-; 1.265 ; PARTIAL_PRODUCT[1]  ; PARTIAL_PRODUCT[0]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.222      ; 1.673      ;
-; 1.338 ; ACTIVE              ; PARTIAL_PRODUCT[5]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.033     ; 1.491      ;
-; 1.345 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 1.582      ;
-; 1.352 ; STATE[0]            ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.258      ; 1.796      ;
-; 1.358 ; ACTIVE              ; PARTIAL_PRODUCT[3]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.033     ; 1.511      ;
-; 1.359 ; ACTIVE              ; PARTIAL_PRODUCT[6]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.033     ; 1.512      ;
-; 1.360 ; ACTIVE              ; PARTIAL_PRODUCT[1]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.033     ; 1.513      ;
-; 1.368 ; PARTIAL_PRODUCT[16] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 1.605      ;
-; 1.376 ; PARTIAL_PRODUCT[15] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 1.613      ;
-; 1.379 ; ACTIVE              ; PARTIAL_PRODUCT[4]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.033     ; 1.532      ;
-; 1.381 ; ACTIVE              ; PARTIAL_PRODUCT[2]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.033     ; 1.534      ;
-; 1.383 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 1.620      ;
-; 1.388 ; PARTIAL_PRODUCT[0]  ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.143      ; 1.717      ;
-; 1.454 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.090      ; 1.730      ;
-; 1.455 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.090      ; 1.731      ;
-; 1.466 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.059      ; 1.711      ;
-; 1.468 ; STATE[1]            ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.258      ; 1.912      ;
-; 1.470 ; PARTIAL_PRODUCT[16] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 1.707      ;
-; 1.473 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 1.710      ;
-; 1.499 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 1.736      ;
-; 1.499 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 1.736      ;
-; 1.535 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 1.772      ;
-; 1.550 ; STATE[2]            ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.258      ; 1.994      ;
-; 1.552 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.070      ; 1.808      ;
-; 1.592 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.090      ; 1.868      ;
-; 1.621 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.090      ; 1.897      ;
-; 1.638 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.082      ; 1.906      ;
-; 1.665 ; ACTIVE              ; MULTIPLICAND[4]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.097      ; 1.948      ;
-; 1.665 ; ACTIVE              ; MULTIPLICAND[5]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.097      ; 1.948      ;
-; 1.665 ; ACTIVE              ; MULTIPLICAND[7]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.097      ; 1.948      ;
-; 1.681 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 1.918      ;
-; 1.688 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 1.925      ;
-; 1.698 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.059      ; 1.943      ;
-; 1.710 ; PARTIAL_PRODUCT[15] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 1.947      ;
-; 1.718 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 1.955      ;
-; 1.738 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 1.975      ;
-; 1.748 ; ACTIVE              ; MULTIPLICAND[0]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.105      ; 2.039      ;
-; 1.748 ; ACTIVE              ; MULTIPLICAND[1]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.105      ; 2.039      ;
-; 1.748 ; ACTIVE              ; MULTIPLICAND[2]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.105      ; 2.039      ;
-; 1.748 ; ACTIVE              ; MULTIPLICAND[3]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.105      ; 2.039      ;
-; 1.748 ; ACTIVE              ; MULTIPLICAND[6]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.105      ; 2.039      ;
-; 1.749 ; AS_SELECTOR         ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.015      ; 1.950      ;
-; 1.749 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 1.986      ;
-; 1.754 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 1.991      ;
-; 1.773 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 2.010      ;
-; 1.779 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.090      ; 2.055      ;
-; 1.784 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 2.021      ;
-; 1.803 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.090      ; 2.079      ;
-; 1.806 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 2.043      ;
-; 1.807 ; PARTIAL_PRODUCT[15] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 2.044      ;
-; 1.812 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 2.049      ;
-; 1.813 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.059      ; 2.058      ;
-; 1.814 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.059      ; 2.059      ;
-; 1.814 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 2.051      ;
-; 1.830 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 2.067      ;
-; 1.835 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.059      ; 2.080      ;
-; 1.836 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 2.073      ;
-; 1.837 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 2.074      ;
-; 1.842 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 2.079      ;
-; 1.845 ; STATE[0]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.331      ; 2.362      ;
-; 1.864 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 2.101      ;
-; 1.871 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 2.108      ;
-; 1.876 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 2.113      ;
-; 1.890 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.090      ; 2.166      ;
-; 1.892 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 2.129      ;
-; 1.902 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 2.139      ;
-; 1.908 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.090      ; 2.184      ;
-; 1.918 ; AS_SELECTOR         ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.000      ; 2.104      ;
-; 1.921 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.051      ; 2.158      ;
-; 1.923 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.090      ; 2.199      ;
+; 0.445 ; ACTIVE              ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 0.674      ;
+; 0.474 ; STATE[0]            ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 0.710      ;
+; 0.517 ; ACTIVE              ; STATE[0]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 0.753      ;
+; 0.518 ; ACTIVE              ; STATE[1]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 0.754      ;
+; 0.609 ; PARTIAL_PRODUCT[3]  ; PARTIAL_PRODUCT[2]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 0.845      ;
+; 0.686 ; STATE[1]            ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 0.922      ;
+; 0.690 ; PARTIAL_PRODUCT[1]  ; PARTIAL_PRODUCT[0]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 0.926      ;
+; 0.691 ; PARTIAL_PRODUCT[2]  ; PARTIAL_PRODUCT[1]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 0.927      ;
+; 0.691 ; PARTIAL_PRODUCT[4]  ; PARTIAL_PRODUCT[3]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 0.927      ;
+; 0.693 ; PARTIAL_PRODUCT[6]  ; PARTIAL_PRODUCT[5]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 0.929      ;
+; 0.694 ; STATE[0]            ; STATE[1]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 0.930      ;
+; 0.793 ; ACTIVE              ; PARTIAL_PRODUCT[5]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 1.235      ;
+; 0.797 ; ACTIVE              ; PARTIAL_PRODUCT[1]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 1.239      ;
+; 0.810 ; ACTIVE              ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.046      ;
+; 0.870 ; ACTIVE              ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.106      ;
+; 0.956 ; PARTIAL_PRODUCT[7]  ; PARTIAL_PRODUCT[6]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.203      ; 1.345      ;
+; 0.984 ; PARTIAL_PRODUCT[5]  ; PARTIAL_PRODUCT[4]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.220      ;
+; 1.020 ; ACTIVE              ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 1.462      ;
+; 1.021 ; ACTIVE              ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 1.463      ;
+; 1.023 ; ACTIVE              ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 1.465      ;
+; 1.023 ; ACTIVE              ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 1.465      ;
+; 1.024 ; ACTIVE              ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 1.466      ;
+; 1.025 ; ACTIVE              ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 1.467      ;
+; 1.027 ; ACTIVE              ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 1.469      ;
+; 1.028 ; ACTIVE              ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 1.470      ;
+; 1.029 ; ACTIVE              ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 1.471      ;
+; 1.042 ; ACTIVE              ; PARTIAL_PRODUCT[3]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 1.484      ;
+; 1.044 ; ACTIVE              ; PARTIAL_PRODUCT[0]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 1.486      ;
+; 1.044 ; ACTIVE              ; PARTIAL_PRODUCT[6]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 1.486      ;
+; 1.064 ; ACTIVE              ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.130      ; 1.380      ;
+; 1.065 ; ACTIVE              ; PARTIAL_PRODUCT[4]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 1.507      ;
+; 1.068 ; ACTIVE              ; PARTIAL_PRODUCT[2]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 1.510      ;
+; 1.170 ; STATE[1]            ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.406      ;
+; 1.284 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.259      ; 1.729      ;
+; 1.287 ; STATE[0]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.523      ;
+; 1.320 ; STATE[0]            ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.556      ;
+; 1.354 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.590      ;
+; 1.364 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.600      ;
+; 1.376 ; PARTIAL_PRODUCT[16] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.612      ;
+; 1.385 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.307      ; 1.878      ;
+; 1.406 ; PARTIAL_PRODUCT[15] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.642      ;
+; 1.407 ; STATE[2]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.643      ;
+; 1.413 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.259      ; 1.858      ;
+; 1.454 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.259      ; 1.899      ;
+; 1.473 ; PARTIAL_PRODUCT[16] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.709      ;
+; 1.479 ; STATE[2]            ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.715      ;
+; 1.490 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.726      ;
+; 1.492 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.307      ; 1.985      ;
+; 1.493 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.307      ; 1.986      ;
+; 1.500 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.736      ;
+; 1.505 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.741      ;
+; 1.530 ; STATE[1]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.766      ;
+; 1.535 ; PARTIAL_PRODUCT[1]  ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.071     ; 1.650      ;
+; 1.541 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.777      ;
+; 1.565 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.307      ; 2.058      ;
+; 1.577 ; AS_SELECTOR         ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 2.019      ;
+; 1.589 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.307      ; 2.082      ;
+; 1.590 ; ACTIVE              ; MULTIPLICAND[0]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.086      ; 1.862      ;
+; 1.590 ; ACTIVE              ; MULTIPLICAND[2]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.086      ; 1.862      ;
+; 1.590 ; ACTIVE              ; MULTIPLICAND[3]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.086      ; 1.862      ;
+; 1.590 ; ACTIVE              ; MULTIPLICAND[6]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.086      ; 1.862      ;
+; 1.590 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.307      ; 2.083      ;
+; 1.610 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.259      ; 2.055      ;
+; 1.634 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.259      ; 2.079      ;
+; 1.637 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.873      ;
+; 1.684 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.147      ; 2.017      ;
+; 1.693 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.929      ;
+; 1.702 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.938      ;
+; 1.705 ; ACTIVE              ; MULTIPLICAND[1]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.007      ; 1.898      ;
+; 1.705 ; ACTIVE              ; MULTIPLICAND[4]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.007      ; 1.898      ;
+; 1.705 ; ACTIVE              ; MULTIPLICAND[5]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.007      ; 1.898      ;
+; 1.705 ; ACTIVE              ; MULTIPLICAND[7]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.007      ; 1.898      ;
+; 1.705 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.941      ;
+; 1.718 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.307      ; 2.211      ;
+; 1.719 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.259      ; 2.164      ;
+; 1.733 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.259      ; 2.178      ;
+; 1.735 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.016     ; 1.905      ;
+; 1.739 ; AS_SELECTOR         ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 2.181      ;
+; 1.740 ; AS_SELECTOR         ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 2.182      ;
+; 1.742 ; PARTIAL_PRODUCT[15] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.978      ;
+; 1.751 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.987      ;
+; 1.751 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 1.987      ;
+; 1.761 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.259      ; 2.206      ;
+; 1.766 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.259      ; 2.211      ;
+; 1.775 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.259      ; 2.220      ;
+; 1.780 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.259      ; 2.225      ;
+; 1.785 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.307      ; 2.278      ;
+; 1.797 ; AS_SELECTOR         ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.256      ; 2.239      ;
+; 1.807 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 2.043      ;
+; 1.807 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.307      ; 2.300      ;
+; 1.812 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 2.048      ;
+; 1.812 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 2.048      ;
+; 1.813 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.259      ; 2.258      ;
+; 1.817 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.259      ; 2.262      ;
+; 1.818 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.050      ; 2.054      ;
 +-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -402,7 +402,7 @@ No synchronizer chains to report.
 +------------+-----------------+------------+---------------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
 +------------+-----------------+------------+---------------------------------------------------------------+
-; 296.21 MHz ; 250.0 MHz       ; CLOCKN     ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 299.85 MHz ; 250.0 MHz       ; CLOCKN     ; limit due to minimum period restriction (max I/O toggle rate) ;
 +------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -412,7 +412,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+--------+------------------+
 ; Clock  ; Slack  ; End Point TNS    ;
 +--------+--------+------------------+
-; CLOCKN ; -2.376 ; -40.806          ;
+; CLOCKN ; -2.335 ; -35.171          ;
 +--------+--------+------------------+
 
 
@@ -451,106 +451,106 @@ No paths to report.
 +--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node           ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
-; -2.376 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 3.349      ;
-; -2.301 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 3.274      ;
-; -2.271 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 3.244      ;
-; -2.260 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 3.233      ;
-; -2.148 ; AS_SELECTOR         ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.131     ; 3.036      ;
-; -2.125 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 3.098      ;
-; -2.097 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 3.070      ;
-; -2.089 ; AS_SELECTOR         ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.131     ; 2.977      ;
-; -2.059 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 3.032      ;
-; -2.043 ; AS_SELECTOR         ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.131     ; 2.931      ;
-; -2.032 ; AS_SELECTOR         ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.131     ; 2.920      ;
-; -1.981 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.954      ;
-; -1.903 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.834      ;
-; -1.897 ; AS_SELECTOR         ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.131     ; 2.785      ;
-; -1.894 ; AS_SELECTOR         ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.131     ; 2.782      ;
-; -1.890 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.863      ;
-; -1.856 ; AS_SELECTOR         ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.131     ; 2.744      ;
-; -1.828 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.759      ;
-; -1.814 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.745      ;
-; -1.798 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.729      ;
-; -1.787 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.718      ;
-; -1.778 ; AS_SELECTOR         ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.131     ; 2.666      ;
-; -1.771 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.090     ; 2.700      ;
-; -1.757 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.688      ;
-; -1.749 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.090     ; 2.678      ;
-; -1.735 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.708      ;
-; -1.720 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.090     ; 2.649      ;
-; -1.711 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.642      ;
-; -1.698 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.629      ;
-; -1.690 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.090     ; 2.619      ;
-; -1.682 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.613      ;
-; -1.666 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.090     ; 2.595      ;
-; -1.662 ; AS_SELECTOR         ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.131     ; 2.550      ;
-; -1.660 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.633      ;
-; -1.656 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.629      ;
-; -1.655 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.090     ; 2.584      ;
-; -1.652 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.583      ;
-; -1.652 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.583      ;
-; -1.641 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.572      ;
-; -1.630 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.603      ;
-; -1.624 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.555      ;
-; -1.619 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.592      ;
-; -1.619 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.550      ;
-; -1.606 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.537      ;
-; -1.598 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.090     ; 2.527      ;
-; -1.595 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.526      ;
-; -1.586 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.090     ; 2.515      ;
-; -1.585 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.558      ;
-; -1.585 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.516      ;
-; -1.581 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.512      ;
-; -1.573 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.076     ; 2.516      ;
-; -1.565 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.496      ;
-; -1.535 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.508      ;
-; -1.523 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.454      ;
-; -1.516 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.090     ; 2.445      ;
-; -1.510 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.483      ;
-; -1.507 ; STATE[2]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.138      ; 2.664      ;
-; -1.507 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.438      ;
-; -1.506 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.437      ;
-; -1.505 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.478      ;
-; -1.503 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.434      ;
-; -1.503 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.434      ;
-; -1.487 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.090     ; 2.416      ;
-; -1.484 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.457      ;
-; -1.482 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.090     ; 2.411      ;
-; -1.480 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.453      ;
-; -1.478 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.409      ;
-; -1.472 ; AS_SELECTOR         ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.130     ; 2.361      ;
-; -1.469 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.442      ;
-; -1.467 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.440      ;
-; -1.465 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.396      ;
-; -1.461 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.434      ;
-; -1.460 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.391      ;
-; -1.460 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.391      ;
-; -1.456 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.429      ;
-; -1.449 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.380      ;
-; -1.448 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.379      ;
-; -1.439 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.370      ;
-; -1.430 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.403      ;
-; -1.424 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.397      ;
-; -1.423 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.396      ;
-; -1.419 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.392      ;
-; -1.417 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.390      ;
-; -1.417 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.348      ;
-; -1.413 ; STATE[1]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.138      ; 2.570      ;
-; -1.407 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.088     ; 2.338      ;
-; -1.395 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.368      ;
-; -1.392 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.365      ;
-; -1.362 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.335      ;
-; -1.354 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.327      ;
-; -1.351 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.324      ;
-; -1.345 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.318      ;
-; -1.339 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.312      ;
-; -1.334 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.046     ; 2.307      ;
-; -1.311 ; ACTIVE              ; PARTIAL_PRODUCT[1]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.201     ; 2.129      ;
-; -1.311 ; ACTIVE              ; PARTIAL_PRODUCT[2]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.201     ; 2.129      ;
-; -1.311 ; ACTIVE              ; PARTIAL_PRODUCT[3]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.201     ; 2.129      ;
-; -1.311 ; ACTIVE              ; PARTIAL_PRODUCT[4]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.201     ; 2.129      ;
-; -1.311 ; ACTIVE              ; PARTIAL_PRODUCT[5]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.201     ; 2.129      ;
-; -1.311 ; ACTIVE              ; PARTIAL_PRODUCT[6]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.201     ; 2.129      ;
+; -2.335 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 3.311      ;
+; -2.308 ; AS_SELECTOR         ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.063      ; 3.390      ;
+; -2.232 ; AS_SELECTOR         ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.063      ; 3.314      ;
+; -2.203 ; AS_SELECTOR         ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.063      ; 3.285      ;
+; -2.191 ; AS_SELECTOR         ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.063      ; 3.273      ;
+; -2.185 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 3.161      ;
+; -2.141 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 3.117      ;
+; -2.103 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 3.079      ;
+; -2.081 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 3.057      ;
+; -2.068 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 3.044      ;
+; -2.052 ; AS_SELECTOR         ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.063      ; 3.134      ;
+; -2.030 ; AS_SELECTOR         ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.063      ; 3.112      ;
+; -2.025 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 3.001      ;
+; -1.990 ; AS_SELECTOR         ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.063      ; 3.072      ;
+; -1.942 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.918      ;
+; -1.913 ; AS_SELECTOR         ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.063      ; 2.995      ;
+; -1.822 ; AS_SELECTOR         ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.063      ; 2.904      ;
+; -1.784 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.913      ;
+; -1.750 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.834      ;
+; -1.720 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.696      ;
+; -1.674 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.758      ;
+; -1.653 ; AS_SELECTOR         ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.020     ; 2.652      ;
+; -1.645 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.774      ;
+; -1.645 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.729      ;
+; -1.644 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.620      ;
+; -1.637 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.721      ;
+; -1.633 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.717      ;
+; -1.632 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.608      ;
+; -1.615 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.591      ;
+; -1.609 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.585      ;
+; -1.605 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.581      ;
+; -1.605 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.734      ;
+; -1.603 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.579      ;
+; -1.591 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.720      ;
+; -1.590 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.719      ;
+; -1.561 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.645      ;
+; -1.552 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.681      ;
+; -1.540 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.669      ;
+; -1.539 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.515      ;
+; -1.539 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.623      ;
+; -1.532 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.616      ;
+; -1.529 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.505      ;
+; -1.529 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.658      ;
+; -1.528 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.657      ;
+; -1.520 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.496      ;
+; -1.520 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.604      ;
+; -1.500 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.476      ;
+; -1.500 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.629      ;
+; -1.494 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.180     ; 2.333      ;
+; -1.494 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.578      ;
+; -1.491 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.620      ;
+; -1.488 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.464      ;
+; -1.488 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.617      ;
+; -1.474 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.603      ;
+; -1.472 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.556      ;
+; -1.464 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.440      ;
+; -1.464 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.440      ;
+; -1.447 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.531      ;
+; -1.442 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.418      ;
+; -1.441 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.570      ;
+; -1.439 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.568      ;
+; -1.438 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.414      ;
+; -1.432 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.516      ;
+; -1.415 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.391      ;
+; -1.412 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.388      ;
+; -1.404 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.488      ;
+; -1.403 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.379      ;
+; -1.402 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.378      ;
+; -1.400 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.376      ;
+; -1.391 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.520      ;
+; -1.388 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.364      ;
+; -1.381 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.465      ;
+; -1.372 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.348      ;
+; -1.359 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.335      ;
+; -1.359 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.488      ;
+; -1.359 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.443      ;
+; -1.358 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.334      ;
+; -1.355 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.439      ;
+; -1.349 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.325      ;
+; -1.347 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.323      ;
+; -1.345 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.321      ;
+; -1.345 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.429      ;
+; -1.342 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.426      ;
+; -1.330 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.414      ;
+; -1.328 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.412      ;
+; -1.327 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.303      ;
+; -1.325 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.301      ;
+; -1.324 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.453      ;
+; -1.322 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.298      ;
+; -1.319 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.403      ;
+; -1.307 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.283      ;
+; -1.307 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.283      ;
+; -1.307 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.391      ;
+; -1.305 ; PARTIAL_PRODUCT[15] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.281      ;
+; -1.295 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.271      ;
+; -1.288 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.110      ; 2.417      ;
+; -1.287 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.263      ;
+; -1.287 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.065      ; 2.371      ;
+; -1.282 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.258      ;
+; -1.273 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.043     ; 2.249      ;
 +--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -559,106 +559,106 @@ No paths to report.
 +-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node           ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
-; 0.387 ; STATE[0]            ; STATE[0]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.387 ; STATE[1]            ; STATE[1]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.039      ; 0.597      ;
-; 0.387 ; STATE[2]            ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.039      ; 0.597      ;
-; 0.387 ; AS_SELECTOR         ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.039      ; 0.597      ;
-; 0.387 ; ACTIVE              ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.039      ; 0.597      ;
+; 0.387 ; STATE[0]            ; STATE[0]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.387 ; PARTIAL_PRODUCT[7]  ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.039      ; 0.597      ;
-; 0.442 ; PARTIAL_PRODUCT[6]  ; PARTIAL_PRODUCT[5]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 0.659      ;
-; 0.553 ; PARTIAL_PRODUCT[5]  ; PARTIAL_PRODUCT[4]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 0.770      ;
-; 0.554 ; PARTIAL_PRODUCT[3]  ; PARTIAL_PRODUCT[2]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 0.771      ;
-; 0.616 ; STATE[1]            ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.044      ; 0.831      ;
-; 0.626 ; STATE[0]            ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.044      ; 0.841      ;
-; 0.626 ; STATE[0]            ; STATE[1]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.044      ; 0.841      ;
-; 0.632 ; PARTIAL_PRODUCT[2]  ; PARTIAL_PRODUCT[1]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 0.849      ;
-; 0.632 ; PARTIAL_PRODUCT[4]  ; PARTIAL_PRODUCT[3]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 0.849      ;
-; 0.660 ; ACTIVE              ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.044      ; 0.875      ;
-; 0.827 ; ACTIVE              ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.130      ; 1.128      ;
-; 0.987 ; ACTIVE              ; PARTIAL_PRODUCT[0]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.076      ; 1.234      ;
-; 1.076 ; ACTIVE              ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.076      ; 1.323      ;
-; 1.077 ; ACTIVE              ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.076      ; 1.324      ;
-; 1.078 ; ACTIVE              ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.076      ; 1.325      ;
-; 1.080 ; ACTIVE              ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.076      ; 1.327      ;
-; 1.081 ; ACTIVE              ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.076      ; 1.328      ;
-; 1.082 ; ACTIVE              ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.076      ; 1.329      ;
-; 1.082 ; ACTIVE              ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.076      ; 1.329      ;
-; 1.083 ; ACTIVE              ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.076      ; 1.330      ;
-; 1.083 ; ACTIVE              ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.076      ; 1.330      ;
-; 1.087 ; ACTIVE              ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.075     ; 1.183      ;
-; 1.089 ; ACTIVE              ; STATE[1]            ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.075     ; 1.185      ;
-; 1.090 ; ACTIVE              ; STATE[0]            ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.075     ; 1.186      ;
-; 1.137 ; PARTIAL_PRODUCT[7]  ; PARTIAL_PRODUCT[6]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.037     ; 1.271      ;
-; 1.145 ; PARTIAL_PRODUCT[1]  ; PARTIAL_PRODUCT[0]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.207      ; 1.523      ;
-; 1.215 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.432      ;
-; 1.244 ; STATE[0]            ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.237      ; 1.652      ;
-; 1.245 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.462      ;
-; 1.247 ; PARTIAL_PRODUCT[16] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.464      ;
-; 1.248 ; ACTIVE              ; PARTIAL_PRODUCT[5]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.037     ; 1.382      ;
-; 1.248 ; PARTIAL_PRODUCT[15] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.465      ;
-; 1.262 ; PARTIAL_PRODUCT[0]  ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.131      ; 1.564      ;
-; 1.267 ; ACTIVE              ; PARTIAL_PRODUCT[3]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.037     ; 1.401      ;
-; 1.268 ; ACTIVE              ; PARTIAL_PRODUCT[6]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.037     ; 1.402      ;
-; 1.269 ; ACTIVE              ; PARTIAL_PRODUCT[1]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.037     ; 1.403      ;
-; 1.279 ; ACTIVE              ; PARTIAL_PRODUCT[4]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.037     ; 1.413      ;
-; 1.281 ; ACTIVE              ; PARTIAL_PRODUCT[2]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.037     ; 1.415      ;
-; 1.291 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.082      ; 1.544      ;
-; 1.293 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.082      ; 1.546      ;
-; 1.294 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.052      ; 1.517      ;
-; 1.356 ; STATE[1]            ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.237      ; 1.764      ;
-; 1.368 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.585      ;
-; 1.368 ; PARTIAL_PRODUCT[16] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.585      ;
-; 1.384 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.601      ;
-; 1.385 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.602      ;
-; 1.400 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.065      ; 1.636      ;
-; 1.400 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.617      ;
-; 1.429 ; STATE[2]            ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.237      ; 1.837      ;
-; 1.439 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.082      ; 1.692      ;
-; 1.454 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.076      ; 1.701      ;
-; 1.467 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.082      ; 1.720      ;
-; 1.501 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.052      ; 1.724      ;
-; 1.510 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.727      ;
-; 1.531 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.748      ;
-; 1.532 ; ACTIVE              ; MULTIPLICAND[4]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.089      ; 1.792      ;
-; 1.532 ; ACTIVE              ; MULTIPLICAND[5]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.089      ; 1.792      ;
-; 1.532 ; ACTIVE              ; MULTIPLICAND[7]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.089      ; 1.792      ;
-; 1.546 ; PARTIAL_PRODUCT[15] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.763      ;
-; 1.562 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.779      ;
-; 1.574 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.791      ;
-; 1.575 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.792      ;
-; 1.581 ; AS_SELECTOR         ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.013      ; 1.765      ;
-; 1.599 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.816      ;
-; 1.600 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.817      ;
-; 1.600 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.082      ; 1.853      ;
-; 1.608 ; ACTIVE              ; MULTIPLICAND[0]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.093      ; 1.872      ;
-; 1.608 ; ACTIVE              ; MULTIPLICAND[1]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.093      ; 1.872      ;
-; 1.608 ; ACTIVE              ; MULTIPLICAND[2]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.093      ; 1.872      ;
-; 1.608 ; ACTIVE              ; MULTIPLICAND[3]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.093      ; 1.872      ;
-; 1.608 ; ACTIVE              ; MULTIPLICAND[6]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.093      ; 1.872      ;
-; 1.616 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.082      ; 1.869      ;
-; 1.618 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.052      ; 1.841      ;
-; 1.619 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.052      ; 1.842      ;
-; 1.628 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.052      ; 1.851      ;
-; 1.632 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.849      ;
-; 1.640 ; PARTIAL_PRODUCT[15] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.857      ;
-; 1.641 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.858      ;
-; 1.651 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.868      ;
-; 1.653 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.870      ;
-; 1.662 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.879      ;
-; 1.670 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.887      ;
-; 1.675 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.082      ; 1.928      ;
-; 1.685 ; STATE[0]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.303      ; 2.159      ;
-; 1.685 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.902      ;
-; 1.685 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.902      ;
-; 1.689 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.906      ;
-; 1.696 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.913      ;
-; 1.705 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.922      ;
-; 1.722 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.939      ;
-; 1.726 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.082      ; 1.979      ;
-; 1.735 ; AS_SELECTOR         ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.001      ; 1.907      ;
-; 1.735 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.052      ; 1.958      ;
-; 1.736 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.082      ; 1.989      ;
-; 1.737 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.082      ; 1.990      ;
+; 0.387 ; AS_SELECTOR         ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.039      ; 0.597      ;
+; 0.387 ; STATE[2]            ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.039      ; 0.597      ;
+; 0.398 ; ACTIVE              ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.039      ; 0.608      ;
+; 0.427 ; STATE[0]            ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 0.644      ;
+; 0.467 ; ACTIVE              ; STATE[0]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 0.684      ;
+; 0.467 ; ACTIVE              ; STATE[1]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 0.684      ;
+; 0.560 ; PARTIAL_PRODUCT[3]  ; PARTIAL_PRODUCT[2]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 0.774      ;
+; 0.625 ; STATE[1]            ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 0.842      ;
+; 0.632 ; STATE[0]            ; STATE[1]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 0.849      ;
+; 0.632 ; PARTIAL_PRODUCT[1]  ; PARTIAL_PRODUCT[0]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 0.846      ;
+; 0.633 ; PARTIAL_PRODUCT[4]  ; PARTIAL_PRODUCT[3]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 0.847      ;
+; 0.634 ; PARTIAL_PRODUCT[2]  ; PARTIAL_PRODUCT[1]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 0.848      ;
+; 0.636 ; PARTIAL_PRODUCT[6]  ; PARTIAL_PRODUCT[5]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 0.850      ;
+; 0.738 ; ACTIVE              ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 0.955      ;
+; 0.741 ; ACTIVE              ; PARTIAL_PRODUCT[5]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.140      ;
+; 0.745 ; ACTIVE              ; PARTIAL_PRODUCT[1]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.144      ;
+; 0.803 ; ACTIVE              ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.020      ;
+; 0.858 ; PARTIAL_PRODUCT[7]  ; PARTIAL_PRODUCT[6]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.180      ; 1.209      ;
+; 0.905 ; PARTIAL_PRODUCT[5]  ; PARTIAL_PRODUCT[4]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.119      ;
+; 0.952 ; ACTIVE              ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.351      ;
+; 0.952 ; ACTIVE              ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.351      ;
+; 0.954 ; ACTIVE              ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.353      ;
+; 0.955 ; ACTIVE              ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.354      ;
+; 0.955 ; ACTIVE              ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.354      ;
+; 0.957 ; ACTIVE              ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.356      ;
+; 0.958 ; ACTIVE              ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.357      ;
+; 0.959 ; ACTIVE              ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.358      ;
+; 0.960 ; ACTIVE              ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.359      ;
+; 0.969 ; ACTIVE              ; PARTIAL_PRODUCT[6]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.368      ;
+; 0.972 ; ACTIVE              ; PARTIAL_PRODUCT[3]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.371      ;
+; 0.974 ; ACTIVE              ; PARTIAL_PRODUCT[0]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.373      ;
+; 0.986 ; ACTIVE              ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.118      ; 1.275      ;
+; 0.986 ; ACTIVE              ; PARTIAL_PRODUCT[4]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.385      ;
+; 0.990 ; ACTIVE              ; PARTIAL_PRODUCT[2]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.389      ;
+; 1.050 ; STATE[1]            ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.267      ;
+; 1.140 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.230      ; 1.541      ;
+; 1.176 ; STATE[0]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.393      ;
+; 1.188 ; STATE[0]            ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.405      ;
+; 1.226 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.273      ; 1.670      ;
+; 1.235 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.449      ;
+; 1.236 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.450      ;
+; 1.238 ; PARTIAL_PRODUCT[16] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.452      ;
+; 1.256 ; PARTIAL_PRODUCT[15] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.470      ;
+; 1.275 ; STATE[2]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.492      ;
+; 1.289 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.230      ; 1.690      ;
+; 1.312 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.230      ; 1.713      ;
+; 1.343 ; STATE[2]            ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.560      ;
+; 1.353 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.273      ; 1.797      ;
+; 1.354 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.273      ; 1.798      ;
+; 1.362 ; PARTIAL_PRODUCT[16] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.576      ;
+; 1.383 ; STATE[1]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.046      ; 1.600      ;
+; 1.384 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.598      ;
+; 1.385 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.599      ;
+; 1.385 ; PARTIAL_PRODUCT[1]  ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.063     ; 1.493      ;
+; 1.387 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.601      ;
+; 1.404 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.273      ; 1.848      ;
+; 1.410 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.273      ; 1.854      ;
+; 1.420 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.634      ;
+; 1.437 ; AS_SELECTOR         ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.836      ;
+; 1.449 ; ACTIVE              ; MULTIPLICAND[0]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.078      ; 1.698      ;
+; 1.449 ; ACTIVE              ; MULTIPLICAND[2]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.078      ; 1.698      ;
+; 1.449 ; ACTIVE              ; MULTIPLICAND[3]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.078      ; 1.698      ;
+; 1.449 ; ACTIVE              ; MULTIPLICAND[6]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.078      ; 1.698      ;
+; 1.452 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.230      ; 1.853      ;
+; 1.469 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.230      ; 1.870      ;
+; 1.480 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.273      ; 1.924      ;
+; 1.482 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.696      ;
+; 1.498 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.132      ; 1.801      ;
+; 1.521 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.273      ; 1.965      ;
+; 1.532 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.746      ;
+; 1.539 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.230      ; 1.940      ;
+; 1.543 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.757      ;
+; 1.551 ; ACTIVE              ; MULTIPLICAND[1]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.009      ; 1.731      ;
+; 1.551 ; ACTIVE              ; MULTIPLICAND[4]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.009      ; 1.731      ;
+; 1.551 ; ACTIVE              ; MULTIPLICAND[5]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.009      ; 1.731      ;
+; 1.551 ; ACTIVE              ; MULTIPLICAND[7]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.009      ; 1.731      ;
+; 1.553 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.767      ;
+; 1.567 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.013     ; 1.725      ;
+; 1.577 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.791      ;
+; 1.579 ; AS_SELECTOR         ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.978      ;
+; 1.580 ; AS_SELECTOR         ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 1.979      ;
+; 1.580 ; PARTIAL_PRODUCT[15] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.794      ;
+; 1.580 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.230      ; 1.981      ;
+; 1.583 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.797      ;
+; 1.583 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.273      ; 2.027      ;
+; 1.589 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.230      ; 1.990      ;
+; 1.596 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.230      ; 1.997      ;
+; 1.601 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.230      ; 2.002      ;
+; 1.613 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.230      ; 2.014      ;
+; 1.625 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.273      ; 2.069      ;
+; 1.627 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.230      ; 2.028      ;
+; 1.628 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.842      ;
+; 1.634 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.848      ;
+; 1.640 ; AS_SELECTOR         ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.228      ; 2.039      ;
+; 1.643 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.857      ;
+; 1.645 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.230      ; 2.046      ;
+; 1.654 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.043      ; 1.868      ;
 +-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -673,7 +673,7 @@ No synchronizer chains to report.
 +--------+--------+------------------+
 ; Clock  ; Slack  ; End Point TNS    ;
 +--------+--------+------------------+
-; CLOCKN ; -0.841 ; -8.908           ;
+; CLOCKN ; -0.808 ; -6.677           ;
 +--------+--------+------------------+
 
 
@@ -703,7 +703,7 @@ No paths to report.
 +--------+--------+--------------------------------+
 ; Clock  ; Slack  ; End Point TNS                  ;
 +--------+--------+--------------------------------+
-; CLOCKN ; -3.000 ; -37.637                        ;
+; CLOCKN ; -3.000 ; -39.143                        ;
 +--------+--------+--------------------------------+
 
 
@@ -712,106 +712,106 @@ No paths to report.
 +--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node           ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
-; -0.841 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.822      ;
-; -0.837 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.818      ;
-; -0.781 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.762      ;
-; -0.773 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.754      ;
-; -0.718 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.699      ;
-; -0.712 ; AS_SELECTOR         ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.075     ; 1.644      ;
-; -0.708 ; AS_SELECTOR         ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.075     ; 1.640      ;
-; -0.703 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.684      ;
-; -0.694 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.675      ;
-; -0.652 ; AS_SELECTOR         ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.075     ; 1.584      ;
-; -0.649 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.630      ;
-; -0.644 ; AS_SELECTOR         ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.075     ; 1.576      ;
-; -0.589 ; AS_SELECTOR         ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.075     ; 1.521      ;
-; -0.574 ; AS_SELECTOR         ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.075     ; 1.506      ;
-; -0.565 ; AS_SELECTOR         ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.075     ; 1.497      ;
-; -0.561 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.520      ;
-; -0.558 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.539      ;
-; -0.557 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.516      ;
-; -0.520 ; AS_SELECTOR         ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.075     ; 1.452      ;
-; -0.501 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.460      ;
-; -0.497 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.049     ; 1.455      ;
-; -0.493 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.049     ; 1.451      ;
-; -0.493 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.452      ;
-; -0.489 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.448      ;
-; -0.484 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.443      ;
-; -0.480 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.461      ;
-; -0.480 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.439      ;
-; -0.476 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.457      ;
-; -0.448 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.407      ;
-; -0.438 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.397      ;
-; -0.437 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.049     ; 1.395      ;
-; -0.429 ; AS_SELECTOR         ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.075     ; 1.361      ;
-; -0.429 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.049     ; 1.387      ;
-; -0.424 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.383      ;
-; -0.423 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.382      ;
-; -0.420 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.401      ;
-; -0.419 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.049     ; 1.377      ;
-; -0.416 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.375      ;
-; -0.415 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.374      ;
-; -0.414 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.373      ;
-; -0.412 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.393      ;
-; -0.397 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.378      ;
-; -0.393 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.374      ;
-; -0.392 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.049     ; 1.350      ;
-; -0.388 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.347      ;
-; -0.386 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.049     ; 1.344      ;
-; -0.385 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.366      ;
-; -0.380 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.339      ;
-; -0.375 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.049     ; 1.333      ;
-; -0.372 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.331      ;
-; -0.370 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.052     ; 1.325      ;
-; -0.370 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.329      ;
-; -0.369 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.328      ;
-; -0.361 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.342      ;
-; -0.361 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.320      ;
-; -0.357 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.338      ;
-; -0.350 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.049     ; 1.308      ;
-; -0.347 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.306      ;
-; -0.346 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.305      ;
-; -0.346 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.305      ;
-; -0.343 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.302      ;
-; -0.342 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.323      ;
-; -0.337 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.318      ;
-; -0.337 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.296      ;
-; -0.333 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.314      ;
-; -0.330 ; STATE[2]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.096      ; 1.433      ;
-; -0.329 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.310      ;
-; -0.328 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.309      ;
-; -0.324 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.305      ;
-; -0.318 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.049     ; 1.276      ;
-; -0.312 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.271      ;
-; -0.310 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.269      ;
-; -0.304 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.263      ;
-; -0.303 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.284      ;
-; -0.301 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.282      ;
-; -0.301 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.260      ;
-; -0.296 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.255      ;
-; -0.293 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.274      ;
-; -0.288 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.269      ;
-; -0.280 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.261      ;
-; -0.279 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.238      ;
-; -0.278 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.237      ;
-; -0.276 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.049     ; 1.234      ;
-; -0.275 ; STATE[1]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.096      ; 1.378      ;
-; -0.274 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.255      ;
-; -0.272 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.048     ; 1.231      ;
-; -0.269 ; AS_SELECTOR         ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.080     ; 1.196      ;
-; -0.268 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.249      ;
-; -0.266 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.247      ;
-; -0.261 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.242      ;
-; -0.260 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.241      ;
-; -0.259 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.240      ;
-; -0.257 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.238      ;
-; -0.251 ; ACTIVE              ; PARTIAL_PRODUCT[1]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.128     ; 1.130      ;
-; -0.251 ; ACTIVE              ; PARTIAL_PRODUCT[2]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.128     ; 1.130      ;
-; -0.251 ; ACTIVE              ; PARTIAL_PRODUCT[3]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.128     ; 1.130      ;
-; -0.251 ; ACTIVE              ; PARTIAL_PRODUCT[4]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.128     ; 1.130      ;
-; -0.251 ; ACTIVE              ; PARTIAL_PRODUCT[5]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.128     ; 1.130      ;
-; -0.251 ; ACTIVE              ; PARTIAL_PRODUCT[6]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.128     ; 1.130      ;
-; -0.250 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.026     ; 1.231      ;
+; -0.808 ; AS_SELECTOR         ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.030      ; 1.845      ;
+; -0.802 ; AS_SELECTOR         ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.030      ; 1.839      ;
+; -0.763 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.742      ;
+; -0.747 ; AS_SELECTOR         ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.030      ; 1.784      ;
+; -0.738 ; AS_SELECTOR         ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.030      ; 1.775      ;
+; -0.718 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.697      ;
+; -0.684 ; AS_SELECTOR         ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.030      ; 1.721      ;
+; -0.664 ; AS_SELECTOR         ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.030      ; 1.701      ;
+; -0.661 ; AS_SELECTOR         ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.030      ; 1.698      ;
+; -0.657 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.636      ;
+; -0.648 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.627      ;
+; -0.645 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.624      ;
+; -0.622 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.601      ;
+; -0.616 ; AS_SELECTOR         ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.030      ; 1.653      ;
+; -0.577 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.556      ;
+; -0.574 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.553      ;
+; -0.525 ; AS_SELECTOR         ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.030      ; 1.562      ;
+; -0.481 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.521      ;
+; -0.480 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.459      ;
+; -0.475 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.515      ;
+; -0.474 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.453      ;
+; -0.453 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.059      ; 1.519      ;
+; -0.425 ; AS_SELECTOR         ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.022     ; 1.410      ;
+; -0.425 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.059      ; 1.491      ;
+; -0.420 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.460      ;
+; -0.419 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.398      ;
+; -0.416 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.456      ;
+; -0.411 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.451      ;
+; -0.410 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.389      ;
+; -0.410 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.389      ;
+; -0.410 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.450      ;
+; -0.406 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.385      ;
+; -0.404 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.383      ;
+; -0.400 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.059      ; 1.466      ;
+; -0.394 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.059      ; 1.460      ;
+; -0.379 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.358      ;
+; -0.364 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.059      ; 1.430      ;
+; -0.357 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.397      ;
+; -0.356 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.335      ;
+; -0.355 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.334      ;
+; -0.355 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.059      ; 1.421      ;
+; -0.355 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.395      ;
+; -0.354 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.113     ; 1.248      ;
+; -0.349 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.328      ;
+; -0.346 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.386      ;
+; -0.340 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.319      ;
+; -0.339 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.059      ; 1.405      ;
+; -0.338 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.378      ;
+; -0.337 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.377      ;
+; -0.336 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.315      ;
+; -0.335 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.059      ; 1.401      ;
+; -0.334 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.374      ;
+; -0.333 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.312      ;
+; -0.330 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.309      ;
+; -0.330 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.059      ; 1.396      ;
+; -0.330 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.059      ; 1.396      ;
+; -0.324 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.303      ;
+; -0.318 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.297      ;
+; -0.312 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.059      ; 1.378      ;
+; -0.312 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.059      ; 1.378      ;
+; -0.305 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.059      ; 1.371      ;
+; -0.301 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.059      ; 1.367      ;
+; -0.299 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.278      ;
+; -0.299 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.339      ;
+; -0.294 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.273      ;
+; -0.292 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.332      ;
+; -0.289 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.329      ;
+; -0.288 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.267      ;
+; -0.286 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.265      ;
+; -0.285 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.264      ;
+; -0.281 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.059      ; 1.347      ;
+; -0.279 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.319      ;
+; -0.273 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.313      ;
+; -0.272 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.312      ;
+; -0.269 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.248      ;
+; -0.269 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.309      ;
+; -0.267 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.059      ; 1.333      ;
+; -0.266 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.245      ;
+; -0.264 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.243      ;
+; -0.263 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.242      ;
+; -0.261 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.240      ;
+; -0.260 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.239      ;
+; -0.258 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.237      ;
+; -0.253 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.059      ; 1.319      ;
+; -0.238 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.217      ;
+; -0.238 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.217      ;
+; -0.238 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.278      ;
+; -0.232 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.211      ;
+; -0.231 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.059      ; 1.297      ;
+; -0.229 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.208      ;
+; -0.229 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.269      ;
+; -0.220 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.260      ;
+; -0.213 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.192      ;
+; -0.211 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.190      ;
+; -0.209 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.249      ;
+; -0.200 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.179      ;
+; -0.198 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.238      ;
+; -0.197 ; PARTIAL_PRODUCT[16] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.176      ;
+; -0.197 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 1.000        ; -0.028     ; 1.176      ;
+; -0.197 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 1.000        ; 0.033      ; 1.237      ;
 +--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -822,104 +822,104 @@ No paths to report.
 +-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
 ; 0.199 ; STATE[0]            ; STATE[0]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.024      ; 0.307      ;
 ; 0.199 ; STATE[1]            ; STATE[1]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.024      ; 0.307      ;
-; 0.199 ; STATE[2]            ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.024      ; 0.307      ;
-; 0.199 ; ACTIVE              ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.024      ; 0.307      ;
-; 0.199 ; AS_SELECTOR         ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.024      ; 0.307      ;
 ; 0.199 ; PARTIAL_PRODUCT[7]  ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.024      ; 0.307      ;
-; 0.214 ; PARTIAL_PRODUCT[6]  ; PARTIAL_PRODUCT[5]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.027      ; 0.325      ;
-; 0.274 ; PARTIAL_PRODUCT[5]  ; PARTIAL_PRODUCT[4]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.027      ; 0.385      ;
-; 0.275 ; PARTIAL_PRODUCT[3]  ; PARTIAL_PRODUCT[2]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.027      ; 0.386      ;
-; 0.308 ; STATE[1]            ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.027      ; 0.419      ;
-; 0.313 ; STATE[0]            ; STATE[1]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.027      ; 0.424      ;
-; 0.314 ; STATE[0]            ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.027      ; 0.425      ;
-; 0.316 ; PARTIAL_PRODUCT[2]  ; PARTIAL_PRODUCT[1]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.027      ; 0.427      ;
-; 0.316 ; PARTIAL_PRODUCT[4]  ; PARTIAL_PRODUCT[3]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.027      ; 0.427      ;
-; 0.334 ; ACTIVE              ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.444      ;
-; 0.393 ; ACTIVE              ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.080      ; 0.557      ;
-; 0.478 ; ACTIVE              ; PARTIAL_PRODUCT[0]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.052      ; 0.614      ;
-; 0.522 ; ACTIVE              ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.052      ; 0.658      ;
-; 0.522 ; ACTIVE              ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.052      ; 0.658      ;
-; 0.524 ; ACTIVE              ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.052      ; 0.660      ;
-; 0.525 ; ACTIVE              ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.052      ; 0.661      ;
-; 0.527 ; ACTIVE              ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.052      ; 0.663      ;
-; 0.527 ; ACTIVE              ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.052      ; 0.663      ;
-; 0.528 ; ACTIVE              ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.052      ; 0.664      ;
-; 0.528 ; ACTIVE              ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.052      ; 0.664      ;
-; 0.529 ; ACTIVE              ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.052      ; 0.665      ;
-; 0.547 ; PARTIAL_PRODUCT[1]  ; PARTIAL_PRODUCT[0]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.138      ; 0.769      ;
-; 0.574 ; ACTIVE              ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.056     ; 0.602      ;
-; 0.576 ; ACTIVE              ; STATE[1]            ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.056     ; 0.604      ;
-; 0.577 ; ACTIVE              ; STATE[0]            ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.056     ; 0.605      ;
-; 0.585 ; PARTIAL_PRODUCT[7]  ; PARTIAL_PRODUCT[6]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.031     ; 0.638      ;
-; 0.589 ; STATE[0]            ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.153      ; 0.826      ;
-; 0.598 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.708      ;
-; 0.608 ; PARTIAL_PRODUCT[16] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.718      ;
-; 0.611 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.721      ;
-; 0.612 ; PARTIAL_PRODUCT[15] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.722      ;
-; 0.613 ; PARTIAL_PRODUCT[0]  ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.075      ; 0.772      ;
-; 0.643 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.054      ; 0.781      ;
-; 0.645 ; STATE[1]            ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.153      ; 0.882      ;
-; 0.645 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.054      ; 0.783      ;
-; 0.649 ; ACTIVE              ; PARTIAL_PRODUCT[5]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.031     ; 0.702      ;
-; 0.656 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.037      ; 0.777      ;
-; 0.658 ; ACTIVE              ; PARTIAL_PRODUCT[3]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.031     ; 0.711      ;
-; 0.658 ; PARTIAL_PRODUCT[16] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.768      ;
-; 0.659 ; ACTIVE              ; PARTIAL_PRODUCT[6]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.031     ; 0.712      ;
-; 0.660 ; ACTIVE              ; PARTIAL_PRODUCT[1]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.031     ; 0.713      ;
-; 0.660 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.770      ;
-; 0.668 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.778      ;
-; 0.669 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.779      ;
-; 0.671 ; ACTIVE              ; PARTIAL_PRODUCT[4]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.031     ; 0.724      ;
-; 0.673 ; ACTIVE              ; PARTIAL_PRODUCT[2]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.031     ; 0.726      ;
-; 0.680 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.790      ;
-; 0.684 ; STATE[2]            ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.153      ; 0.921      ;
-; 0.704 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.033      ; 0.821      ;
-; 0.708 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.054      ; 0.846      ;
-; 0.715 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.054      ; 0.853      ;
-; 0.745 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.044      ; 0.873      ;
-; 0.757 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.867      ;
-; 0.763 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.037      ; 0.884      ;
-; 0.767 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.877      ;
-; 0.768 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.878      ;
-; 0.773 ; PARTIAL_PRODUCT[15] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.883      ;
-; 0.774 ; ACTIVE              ; MULTIPLICAND[4]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.054      ; 0.912      ;
-; 0.774 ; ACTIVE              ; MULTIPLICAND[5]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.054      ; 0.912      ;
-; 0.774 ; ACTIVE              ; MULTIPLICAND[7]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.054      ; 0.912      ;
-; 0.781 ; AS_SELECTOR         ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.012      ; 0.877      ;
-; 0.781 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.891      ;
-; 0.786 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.896      ;
-; 0.792 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.054      ; 0.930      ;
-; 0.800 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.037      ; 0.921      ;
-; 0.801 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.037      ; 0.922      ;
-; 0.802 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.054      ; 0.940      ;
-; 0.804 ; STATE[0]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.195      ; 1.083      ;
-; 0.806 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.916      ;
-; 0.809 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.919      ;
-; 0.813 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.037      ; 0.934      ;
-; 0.815 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.925      ;
-; 0.818 ; ACTIVE              ; MULTIPLICAND[0]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.057      ; 0.959      ;
-; 0.818 ; ACTIVE              ; MULTIPLICAND[1]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.057      ; 0.959      ;
-; 0.818 ; ACTIVE              ; MULTIPLICAND[2]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.057      ; 0.959      ;
-; 0.818 ; ACTIVE              ; MULTIPLICAND[3]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.057      ; 0.959      ;
-; 0.818 ; ACTIVE              ; MULTIPLICAND[6]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.057      ; 0.959      ;
-; 0.820 ; PARTIAL_PRODUCT[15] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.930      ;
-; 0.820 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.930      ;
-; 0.821 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.931      ;
-; 0.822 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.932      ;
-; 0.828 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.938      ;
-; 0.830 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.940      ;
-; 0.835 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.945      ;
-; 0.835 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.945      ;
-; 0.840 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.950      ;
-; 0.846 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.956      ;
-; 0.851 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.961      ;
-; 0.855 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.054      ; 0.993      ;
-; 0.858 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.968      ;
-; 0.860 ; STATE[1]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.195      ; 1.139      ;
-; 0.867 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.054      ; 1.005      ;
-; 0.869 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.026      ; 0.979      ;
-; 0.869 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.054      ; 1.007      ;
-; 0.869 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.054      ; 1.007      ;
+; 0.199 ; AS_SELECTOR         ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.024      ; 0.307      ;
+; 0.199 ; STATE[2]            ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.024      ; 0.307      ;
+; 0.206 ; ACTIVE              ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.024      ; 0.314      ;
+; 0.214 ; STATE[0]            ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.029      ; 0.327      ;
+; 0.236 ; ACTIVE              ; STATE[0]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.029      ; 0.349      ;
+; 0.236 ; ACTIVE              ; STATE[1]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.029      ; 0.349      ;
+; 0.276 ; PARTIAL_PRODUCT[3]  ; PARTIAL_PRODUCT[2]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.388      ;
+; 0.312 ; STATE[1]            ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.029      ; 0.425      ;
+; 0.315 ; STATE[0]            ; STATE[1]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.029      ; 0.428      ;
+; 0.315 ; PARTIAL_PRODUCT[1]  ; PARTIAL_PRODUCT[0]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.427      ;
+; 0.315 ; PARTIAL_PRODUCT[2]  ; PARTIAL_PRODUCT[1]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.427      ;
+; 0.315 ; PARTIAL_PRODUCT[4]  ; PARTIAL_PRODUCT[3]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.427      ;
+; 0.317 ; PARTIAL_PRODUCT[6]  ; PARTIAL_PRODUCT[5]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.429      ;
+; 0.354 ; ACTIVE              ; PARTIAL_PRODUCT[5]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.571      ;
+; 0.358 ; ACTIVE              ; PARTIAL_PRODUCT[1]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.575      ;
+; 0.372 ; ACTIVE              ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.029      ; 0.485      ;
+; 0.390 ; ACTIVE              ; STATE[2]            ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.029      ; 0.503      ;
+; 0.416 ; PARTIAL_PRODUCT[7]  ; PARTIAL_PRODUCT[6]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.113      ; 0.613      ;
+; 0.433 ; PARTIAL_PRODUCT[5]  ; PARTIAL_PRODUCT[4]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.545      ;
+; 0.459 ; ACTIVE              ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.676      ;
+; 0.459 ; ACTIVE              ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.676      ;
+; 0.461 ; ACTIVE              ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.678      ;
+; 0.462 ; ACTIVE              ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.679      ;
+; 0.462 ; ACTIVE              ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.679      ;
+; 0.464 ; ACTIVE              ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.681      ;
+; 0.466 ; ACTIVE              ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.683      ;
+; 0.466 ; ACTIVE              ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.683      ;
+; 0.468 ; ACTIVE              ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.685      ;
+; 0.469 ; ACTIVE              ; PARTIAL_PRODUCT[3]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.686      ;
+; 0.471 ; ACTIVE              ; PARTIAL_PRODUCT[0]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.688      ;
+; 0.473 ; ACTIVE              ; PARTIAL_PRODUCT[6]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.690      ;
+; 0.485 ; ACTIVE              ; PARTIAL_PRODUCT[4]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.702      ;
+; 0.488 ; ACTIVE              ; PARTIAL_PRODUCT[2]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.705      ;
+; 0.491 ; ACTIVE              ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.063      ; 0.638      ;
+; 0.553 ; STATE[1]            ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.029      ; 0.666      ;
+; 0.562 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.136      ; 0.782      ;
+; 0.586 ; STATE[0]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.029      ; 0.699      ;
+; 0.602 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.714      ;
+; 0.604 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.716      ;
+; 0.607 ; PARTIAL_PRODUCT[16] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.719      ;
+; 0.609 ; MULTIPLICAND[1]     ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.161      ; 0.854      ;
+; 0.617 ; PARTIAL_PRODUCT[15] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.729      ;
+; 0.620 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.136      ; 0.840      ;
+; 0.624 ; STATE[0]            ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.029      ; 0.737      ;
+; 0.635 ; STATE[2]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.029      ; 0.748      ;
+; 0.635 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.136      ; 0.855      ;
+; 0.639 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.161      ; 0.884      ;
+; 0.639 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.161      ; 0.884      ;
+; 0.655 ; PARTIAL_PRODUCT[16] ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.767      ;
+; 0.662 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.774      ;
+; 0.666 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.778      ;
+; 0.668 ; PARTIAL_PRODUCT[11] ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.780      ;
+; 0.677 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.161      ; 0.922      ;
+; 0.681 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[9]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.793      ;
+; 0.689 ; MULTIPLICAND[7]     ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.161      ; 0.934      ;
+; 0.691 ; STATE[2]            ; ACTIVE              ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.029      ; 0.804      ;
+; 0.691 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.161      ; 0.936      ;
+; 0.693 ; PARTIAL_PRODUCT[1]  ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.030     ; 0.747      ;
+; 0.697 ; STATE[1]            ; AS_SELECTOR         ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.029      ; 0.810      ;
+; 0.704 ; AS_SELECTOR         ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.921      ;
+; 0.711 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.136      ; 0.931      ;
+; 0.720 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.136      ; 0.940      ;
+; 0.749 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.861      ;
+; 0.758 ; ACTIVE              ; MULTIPLICAND[0]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.047      ; 0.889      ;
+; 0.758 ; ACTIVE              ; MULTIPLICAND[2]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.047      ; 0.889      ;
+; 0.758 ; ACTIVE              ; MULTIPLICAND[3]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.047      ; 0.889      ;
+; 0.758 ; ACTIVE              ; MULTIPLICAND[6]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.047      ; 0.889      ;
+; 0.760 ; PARTIAL_PRODUCT[14] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.872      ;
+; 0.761 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[8]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.873      ;
+; 0.762 ; PARTIAL_PRODUCT[13] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.874      ;
+; 0.766 ; MULTIPLICAND[0]     ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.074      ; 0.924      ;
+; 0.769 ; AS_SELECTOR         ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.986      ;
+; 0.769 ; AS_SELECTOR         ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 0.986      ;
+; 0.770 ; MULTIPLICAND[2]     ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.136      ; 0.990      ;
+; 0.778 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.161      ; 1.023      ;
+; 0.780 ; PARTIAL_PRODUCT[15] ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.892      ;
+; 0.784 ; PARTIAL_PRODUCT[0]  ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.896      ;
+; 0.785 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.136      ; 1.005      ;
+; 0.787 ; MULTIPLICAND[6]     ; PARTIAL_PRODUCT[16] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.136      ; 1.007      ;
+; 0.791 ; PARTIAL_PRODUCT[8]  ; PARTIAL_PRODUCT[7]  ; CLOCKN       ; CLOCKN      ; 0.000        ; -0.009     ; 0.866      ;
+; 0.791 ; MULTIPLICAND[5]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.161      ; 1.036      ;
+; 0.792 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[11] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.136      ; 1.012      ;
+; 0.794 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.136      ; 1.014      ;
+; 0.798 ; AS_SELECTOR         ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 1.015      ;
+; 0.798 ; MULTIPLICAND[3]     ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.136      ; 1.018      ;
+; 0.804 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.916      ;
+; 0.813 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.925      ;
+; 0.815 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[13] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.161      ; 1.060      ;
+; 0.816 ; PARTIAL_PRODUCT[10] ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.928      ;
+; 0.817 ; PARTIAL_PRODUCT[12] ; PARTIAL_PRODUCT[14] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.929      ;
+; 0.819 ; AS_SELECTOR         ; PARTIAL_PRODUCT[15] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.133      ; 1.036      ;
+; 0.821 ; ACTIVE              ; MULTIPLICAND[1]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.006      ; 0.911      ;
+; 0.821 ; ACTIVE              ; MULTIPLICAND[4]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.006      ; 0.911      ;
+; 0.821 ; ACTIVE              ; MULTIPLICAND[5]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.006      ; 0.911      ;
+; 0.821 ; ACTIVE              ; MULTIPLICAND[7]     ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.006      ; 0.911      ;
+; 0.823 ; PARTIAL_PRODUCT[9]  ; PARTIAL_PRODUCT[10] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.028      ; 0.935      ;
+; 0.824 ; MULTIPLICAND[4]     ; PARTIAL_PRODUCT[12] ; CLOCKN       ; CLOCKN      ; 0.000        ; 0.161      ; 1.069      ;
 +-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -934,10 +934,10 @@ No synchronizer chains to report.
 +------------------+---------+-------+----------+---------+---------------------+
 ; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+---------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -2.755  ; 0.199 ; N/A      ; N/A     ; -3.000              ;
-;  CLOCKN          ; -2.755  ; 0.199 ; N/A      ; N/A     ; -3.000              ;
-; Design-wide TNS  ; -47.976 ; 0.0   ; 0.0      ; 0.0     ; -41.55              ;
-;  CLOCKN          ; -47.976 ; 0.000 ; N/A      ; N/A     ; -41.550             ;
+; Worst-case Slack ; -2.684  ; 0.199 ; N/A      ; N/A     ; -3.000              ;
+;  CLOCKN          ; -2.684  ; 0.199 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -41.34  ; 0.0   ; 0.0      ; 0.0     ; -41.55              ;
+;  CLOCKN          ; -41.340 ; 0.000 ; N/A      ; N/A     ; -41.550             ;
 +------------------+---------+-------+----------+---------+---------------------+
 
 
@@ -1084,7 +1084,7 @@ No synchronizer chains to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; CLOCKN     ; CLOCKN   ; 0        ; 0        ; 0        ; 265      ;
+; CLOCKN     ; CLOCKN   ; 0        ; 0        ; 0        ; 302      ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1094,7 +1094,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; CLOCKN     ; CLOCKN   ; 0        ; 0        ; 0        ; 265      ;
+; CLOCKN     ; CLOCKN   ; 0        ; 0        ; 0        ; 302      ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1242,11 +1242,11 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Fri Nov 22 20:10:58 2024
+    Info: Processing started: Mon Nov 25 12:57:41 2024
 Info: Command: quartus_sta Lab4 -c multiplier
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'multiplier.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
@@ -1259,10 +1259,10 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.755
+Info (332146): Worst-case setup slack is -2.684
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.755             -47.976 CLOCKN 
+    Info (332119):    -2.684             -41.340 CLOCKN 
 Info (332146): Worst-case hold slack is 0.440
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -1279,10 +1279,10 @@ Info (334004): Delay annotation completed successfully
 Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.376
+Info (332146): Worst-case setup slack is -2.335
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.376             -40.806 CLOCKN 
+    Info (332119):    -2.335             -35.171 CLOCKN 
 Info (332146): Worst-case hold slack is 0.387
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -1297,10 +1297,10 @@ Info: Analyzing Fast 1200mV 0C Model
 Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -0.841
+Info (332146): Worst-case setup slack is -0.808
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.841              -8.908 CLOCKN 
+    Info (332119):    -0.808              -6.677 CLOCKN 
 Info (332146): Worst-case hold slack is 0.199
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -1310,13 +1310,13 @@ Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -37.637 CLOCKN 
+    Info (332119):    -3.000             -39.143 CLOCKN 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 669 megabytes
-    Info: Processing ended: Fri Nov 22 20:10:59 2024
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 628 megabytes
+    Info: Processing ended: Mon Nov 25 12:57:43 2024
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

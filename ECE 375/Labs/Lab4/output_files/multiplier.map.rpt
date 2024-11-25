@@ -1,5 +1,5 @@
 Analysis & Synthesis report for multiplier
-Fri Nov 22 20:10:46 2024
+Mon Nov 25 12:57:21 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -46,13 +46,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Nov 22 20:10:46 2024          ;
+; Analysis & Synthesis Status        ; Successful - Mon Nov 25 12:57:21 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; multiplier                                     ;
 ; Top-level Entity Name              ; MULTIPLIER                                     ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 53                                             ;
-;     Total combinational functions  ; 45                                             ;
+; Total logic elements               ; 54                                             ;
+;     Total combinational functions  ; 46                                             ;
 ;     Dedicated logic registers      ; 30                                             ;
 ; Total registers                    ; 30                                             ;
 ; Total pins                         ; 36                                             ;
@@ -154,16 +154,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 16          ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 16          ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-16        ;   0.0%      ;
+;     Processors 2-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -181,16 +180,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 53           ;
+; Estimated Total logic elements              ; 54           ;
 ;                                             ;              ;
-; Total combinational functions               ; 45           ;
+; Total combinational functions               ; 46           ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 21           ;
-;     -- 3 input functions                    ; 19           ;
+;     -- 4 input functions                    ; 28           ;
+;     -- 3 input functions                    ; 13           ;
 ;     -- <=2 input functions                  ; 5            ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 35           ;
+;     -- normal mode                          ; 36           ;
 ;     -- arithmetic mode                      ; 10           ;
 ;                                             ;              ;
 ; Total registers                             ; 30           ;
@@ -203,8 +202,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;              ;
 ; Maximum fan-out node                        ; RESETN~input ;
 ; Maximum fan-out                             ; 47           ;
-; Total fan-out                               ; 320          ;
-; Average fan-out                             ; 2.18         ;
+; Total fan-out                               ; 330          ;
+; Average fan-out                             ; 2.23         ;
 +---------------------------------------------+--------------+
 
 
@@ -213,7 +212,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |MULTIPLIER                ; 45 (45)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 36   ; 0            ; |MULTIPLIER         ; MULTIPLIER  ; work         ;
+; |MULTIPLIER                ; 46 (46)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 36   ; 0            ; |MULTIPLIER         ; MULTIPLIER  ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -273,15 +272,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     CLR               ; 5                           ;
 ;     CLR SLD           ; 1                           ;
 ;     ENA CLR           ; 24                          ;
-; cycloneiii_lcell_comb ; 46                          ;
+; cycloneiii_lcell_comb ; 47                          ;
 ;     arith             ; 10                          ;
 ;         2 data inputs ; 1                           ;
 ;         3 data inputs ; 9                           ;
-;     normal            ; 36                          ;
+;     normal            ; 37                          ;
 ;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 4                           ;
-;         3 data inputs ; 10                          ;
-;         4 data inputs ; 21                          ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 28                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.90                        ;
 ; Average LUT depth     ; 2.39                        ;
@@ -303,26 +302,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Fri Nov 22 20:10:41 2024
+    Info: Processing started: Mon Nov 25 12:57:14 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab4 -c multiplier
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file multiplier.vhd
     Info (12022): Found design unit 1: MULTIPLIER-ARCH File: /home/mrgeotech/School/ECE 375/Labs/Lab4/multiplier.vhd Line: 18
     Info (12023): Found entity 1: MULTIPLIER File: /home/mrgeotech/School/ECE 375/Labs/Lab4/multiplier.vhd Line: 5
 Info (12127): Elaborating entity "multiplier" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at multiplier.vhd(73): signal "MULTIPLICAND" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mrgeotech/School/ECE 375/Labs/Lab4/multiplier.vhd Line: 73
+Warning (10492): VHDL Process Statement warning at multiplier.vhd(74): signal "MULTIPLICAND" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mrgeotech/School/ECE 375/Labs/Lab4/multiplier.vhd Line: 74
+Warning (10492): VHDL Process Statement warning at multiplier.vhd(88): signal "ADDER_IN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mrgeotech/School/ECE 375/Labs/Lab4/multiplier.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at multiplier.vhd(89): signal "AS_SELECTOR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mrgeotech/School/ECE 375/Labs/Lab4/multiplier.vhd Line: 89
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 89 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 90 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 19 input pins
     Info (21059): Implemented 17 output pins
-    Info (21061): Implemented 53 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 500 megabytes
-    Info: Processing ended: Fri Nov 22 20:10:46 2024
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:12
+    Info (21061): Implemented 54 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 499 megabytes
+    Info: Processing ended: Mon Nov 25 12:57:21 2024
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:18
 
 

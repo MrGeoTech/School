@@ -1,5 +1,5 @@
 Flow report for multiplier
-Fri Nov 22 20:11:00 2024
+Mon Nov 25 12:57:44 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Fri Nov 22 20:11:00 2024          ;
+; Flow Status                        ; Successful - Mon Nov 25 12:57:44 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; multiplier                                     ;
 ; Top-level Entity Name              ; MULTIPLIER                                     ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE115F29C7                                  ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 45 / 114,480 ( < 1 % )                         ;
-;     Total combinational functions  ; 45 / 114,480 ( < 1 % )                         ;
+; Total logic elements               ; 47 / 114,480 ( < 1 % )                         ;
+;     Total combinational functions  ; 46 / 114,480 ( < 1 % )                         ;
 ;     Dedicated logic registers      ; 30 / 114,480 ( < 1 % )                         ;
 ; Total registers                    ; 30                                             ;
 ; Total pins                         ; 36 / 529 ( 7 % )                               ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/22/2024 20:10:41 ;
+; Start date & time ; 11/25/2024 12:57:14 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; multiplier          ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 39908808631453.173232784133839         ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 211365437462491.173256103404492        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -101,26 +101,26 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 500 MB              ; 00:00:12                           ;
-; Fitter               ; 00:00:07     ; 1.0                     ; 2137 MB             ; 00:00:15                           ;
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 499 MB              ; 00:00:18                           ;
+; Fitter               ; 00:00:14     ; 1.0                     ; 1743 MB             ; 00:00:27                           ;
 ; Assembler            ; 00:00:02     ; 1.0                     ; 362 MB              ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:01     ; 1.1                     ; 669 MB              ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 628 MB              ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 585 MB              ; 00:00:00                           ;
-; Total                ; 00:00:15     ; --                      ; --                  ; 00:00:30                           ;
+; Total                ; 00:00:25     ; --                      ; --                  ; 00:00:48                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                        ;
-+----------------------+------------------+--------------+--------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name      ; OS Version   ; Processor type ;
-+----------------------+------------------+--------------+--------------+----------------+
-; Analysis & Synthesis ; mrgeotech-pc     ; mrgeotech-pc ; mrgeotech-pc ; x86_64         ;
-; Fitter               ; mrgeotech-pc     ; mrgeotech-pc ; mrgeotech-pc ; x86_64         ;
-; Assembler            ; mrgeotech-pc     ; mrgeotech-pc ; mrgeotech-pc ; x86_64         ;
-; Timing Analyzer      ; mrgeotech-pc     ; mrgeotech-pc ; mrgeotech-pc ; x86_64         ;
-; EDA Netlist Writer   ; mrgeotech-pc     ; mrgeotech-pc ; mrgeotech-pc ; x86_64         ;
-+----------------------+------------------+--------------+--------------+----------------+
++------------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                                ;
++----------------------+------------------+------------------+------------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name          ; OS Version       ; Processor type ;
++----------------------+------------------+------------------+------------------+----------------+
+; Analysis & Synthesis ; mrgeotech-laptop ; mrgeotech-laptop ; mrgeotech-laptop ; x86_64         ;
+; Fitter               ; mrgeotech-laptop ; mrgeotech-laptop ; mrgeotech-laptop ; x86_64         ;
+; Assembler            ; mrgeotech-laptop ; mrgeotech-laptop ; mrgeotech-laptop ; x86_64         ;
+; Timing Analyzer      ; mrgeotech-laptop ; mrgeotech-laptop ; mrgeotech-laptop ; x86_64         ;
+; EDA Netlist Writer   ; mrgeotech-laptop ; mrgeotech-laptop ; mrgeotech-laptop ; x86_64         ;
++----------------------+------------------+------------------+------------------+----------------+
 
 
 ------------

@@ -21,10 +21,10 @@ architecture ARCH of MULTIPLIER is
     signal PARTIAL_PRODUCT      : STD_LOGIC_VECTOR((2*SIZE)+1 downto 0);
     signal NEW_PARTIAL_PRODUCT  : STD_LOGIC_VECTOR((2*SIZE)+1 downto 0);
     signal ADDER_IN             : STD_LOGIC_VECTOR(SIZE+1 downto 0);
-    signal ADDER_INTERMEDIATE   : STD_LOGIC_VECTOR(SIZE+1 downto 0);
     signal ADDER_OUT            : STD_LOGIC_VECTOR(SIZE+1 downto 0);
     signal ACTIVE               : STD_LOGIC := '0';
     signal AS_SELECTOR          : STD_LOGIC := '0';
+    signal AS_SELECTOR_VEC      : STD_LOGIC_VECTOR(SIZE+1 downto 0);
 begin
     process(CLOCKN, RESETN)
     begin
@@ -54,11 +54,12 @@ begin
                     when "011" => STATE <= "100";
                     when "100" => STATE <= "101";
                     when "101" => STATE <= "110";
-                    when "110" => STATE <= "111";
+                    when "110" => 
+						      STATE <= "111";
+                        AS_SELECTOR <= PARTIAL_PRODUCT(1);
                     when others => 
                         STATE <= "000";
                         ACTIVE <= '0';
-                        AS_SELECTOR <= PARTIAL_PRODUCT(0);
                 end case;
                 -- Right Shift Logic
                 PARTIAL_PRODUCT <= NEW_PARTIAL_PRODUCT;
@@ -77,20 +78,20 @@ begin
     end process;
 
     -- Add/Sub Logic
-    process(RESETN, AS_SELECTOR, ADDER_INTERMEDIATE, PARTIAL_PRODUCT)
+    process(RESETN, AS_SELECTOR_VEC, PARTIAL_PRODUCT)
     begin
         if RESETN = '0' then
             ADDER_OUT <= (others => '0');
         else
             ADDER_OUT <= std_logic_vector(
                 signed(PARTIAL_PRODUCT(2*SIZE+1 downto SIZE)) + 
-                signed(ADDER_INTERMEDIATE) + 
+                signed(ADDER_IN xor AS_SELECTOR_VEC) + 
                 signed'('0' & AS_SELECTOR)
             );
         end if;
     end process;
 
-    ADDER_INTERMEDIATE <= ADDER_IN xor std_logic_vector(signed'(AS_SELECTOR&AS_SELECTOR));
+    AS_SELECTOR_VEC <= (others => AS_SELECTOR);
     NEW_PARTIAL_PRODUCT <= ADDER_OUT(SIZE+1) & ADDER_OUT & PARTIAL_PRODUCT(SIZE-1 downto 1);
     PRODUCT <= PARTIAL_PRODUCT((2*SIZE)-1 downto 0);
     DONE    <= not ACTIVE;
