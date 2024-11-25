@@ -120,4 +120,4 @@ end architecture;
 
 #### Demonstration
 
-![Lab4 Demonstration](Lab4_Demonstration.png)
+![Lab4 Demonstration](Lab4_Demonstration.jpg)
