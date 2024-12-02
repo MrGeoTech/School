@@ -29,7 +29,7 @@
 	F = YZ + XZ + XY -- Complementarity
 	**F = X(Z + Y) + YZ** -- Distribution
 	
-	![[Assignment1-0.png]]
+	![](../Images/Assignment1-0.png)
 
 ---
 
@@ -39,7 +39,7 @@
 	F = A + VUX -- Distribution
 	**F = W + Y + Z + VUX**
 	
-	![[Assignment1-1.png]]
+	![](../Images/Assignment1-1.png)
 
 
 ---

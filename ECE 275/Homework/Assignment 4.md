@@ -1,8 +1,8 @@
-1. ![[Assignment4-0.png]]
-2. ![[Assignment4-1.png]]
-3. ![[Assignment4-2.png]]
-4. ![[Assignment4-3.png]]
-5. ![[Assignment4-4.png]]
+1. ![](../Images/Assignment4-0.png)
+2. ![](../Images/Assignment4-1.png)
+3. ![](../Images/Assignment4-2.png)
+4. ![](../Images/Assignment4-3.png)
+5. ![](../Images/Assignment4-4.png)
 6. Truth Table
 
 | L   | M   | Q   | Q+  |
@@ -15,6 +15,7 @@
 | 1   | 0   | 1   | 0   |
 | 1   | 1   | 0   | 0   |
 | 1   | 1   | 1   | 0   |
+
 7. Excitation Table
 
 | Q2  | Q1  | Q0  | Q2+ | Q1+ | Q0+ | L2  | L1  | L0  | M2  | M1  | M0  |
@@ -36,6 +37,7 @@
 | 0   | 1   | X   | 0   |
 | 1   | 0   | 1   | X   |
 | 1   | 1   | 0   | X   |
+
 8. 
 
 | Q2  | Q1  | Q0  | Q2+ | Q1+ | Q0+ | S2  | S1  | S0  | R2  | R1  | R0  |
@@ -58,8 +60,8 @@
 | 1   | 0   | 0   | 1   |
 | 1   | 1   | X   | 0   |
 
-9. ![[Assignment4-5.jpg]]
-10. ![[Assignment4-6.jpg]]
+9. ![](../Images/Assignment4-5.jpg)
+10. ![](../Images/Assignment4-6.jpg)
 11. 
     a. It is a Mealy because Z depends on X (Z = X * Qa)
     b. Da = X'(Qb)        Db = X

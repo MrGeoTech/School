@@ -94,7 +94,7 @@
 | 1   | 1   | 0   | 1   | 1   |
 | 1   | 1   | 1   | 0   | 1   |
 | 1   | 1   | 1   | 1   | 1   |
-![[Assignment3-0.png]]
+![](../Images/Assignment3-0.png)
 
 7.
 
@@ -141,4 +141,4 @@ EPI: Groups with 1's only covered by said group
 | X\\YZ | 00  | 01  | 11  | 10  |
 | 0     | 1   | 1   |     |     |
 | 1     |     |     | 1   |     |
-![[Assignment3-1.png]]
+![](../Images/Assignment3-1.png)
