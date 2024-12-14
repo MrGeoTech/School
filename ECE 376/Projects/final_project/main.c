@@ -12,10 +12,10 @@ void decTemp(u16_t amount) {
 }
 
 void resetTMR0() {
-    TMR0H = 0xFE; // 2^16 - 1000 = 0xFC18
-    TMR0L = 0x18;
-    //TMR0H = 0x92; // 2^16 - 28125 = 37411 = 0x9223
-    //TMR0L = 0x23;
+    //TMR0H = 0xFE; // 2^16 - 1000 = 0xFC18 (For testing)
+    //TMR0L = 0x18;
+    TMR0H = 0x92; // 2^16 - 28125 = 37411 = 0x9223
+    TMR0L = 0x23;
 }
 
 void __interrupt() int_handler() {
