@@ -80,8 +80,30 @@ begin
                     multiplier <= "00" & multiplier(6 downto 2);
                 when Round1 =>
                     next_state <= Round2;
+
+                    if control_2A = '1' then
+                        add_sub_in <= resize((multiplicand(4 downto 0) & '0'), 12);
+                    elsif control_A = '1' then
+                        add_sub_in <= resize(multiplicand, 12);
+                    else
+                        add_sub_in <= (others => '0');
+                    end if;
+
+                    partial_product <= add_result(12) & add_result(12 downto 2);
+                    multiplier <= "00" & multiplier(6 downto 2);
                 when Round2 =>
                     next_state <= Finished;
+
+                    if control_2A = '1' then
+                        add_sub_in <= resize((multiplicand(4 downto 0) & '0'), 12);
+                    elsif control_A = '1' then
+                        add_sub_in <= resize(multiplicand, 12);
+                    else
+                        add_sub_in <= (others => '0');
+                    end if;
+
+                    partial_product <= add_result(12) & add_result(12 downto 2);
+                    multiplier <= "00" & multiplier(6 downto 2);
                 when others =>
                     next_state <= Init;
             end case;
