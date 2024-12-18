@@ -1,5 +1,5 @@
 Fitter report for Multiplier
-Wed Dec 18 11:54:07 2024
+Wed Dec 18 12:12:48 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -58,7 +58,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Wed Dec 18 11:54:07 2024          ;
+; Fitter Status                      ; Successful - Wed Dec 18 12:12:48 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; Multiplier                                     ;
 ; Top-level Entity Name              ; Multiplier                                     ;
@@ -1494,9 +1494,9 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 2086 megabytes
-    Info: Processing ended: Wed Dec 18 11:54:07 2024
+    Info: Peak virtual memory: 2081 megabytes
+    Info: Processing ended: Wed Dec 18 12:12:48 2024
     Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:09
+    Info: Total CPU time (on all processors): 00:00:10
 
 
