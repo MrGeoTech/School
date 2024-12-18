@@ -1,0 +1,63 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+entity Multiplier is
+    Port (
+        CLOCK    : in  STD_LOGIC;
+        RESET    : in  STD_LOGIC;
+        START    : in  STD_LOGIC;
+        A        : in  SIGNED(5 downto 0);
+        B        : in  SIGNED(5 downto 0);
+        P        : out SIGNED(11 downto 0);
+        DONE     : out STD_LOGIC
+    );
+end entity Multiplier;
+
+architecture Arch of Multiplier is
+    type state_type is (Init, Round1, Round2, Finished);
+    signal current_state, next_state : state_type;
+
+    signal multiplier      : SIGNED(5 downto 0);
+    signal multiplicand    : SIGNED(6 downto 0);
+    signal partial_product : SIGNED(11 downto 0) := (others => '0');
+    signal add_sub_in_pre  : SIGNED(5 downto 0);
+    signal add_sub_in_a    : SIGNED(5 downto 0);
+    signal add_result      : SIGNED(11 downto 0);
+    signal control_A       : STD_LOGIC;
+    signal control_2A      : STD_LOGIC;
+    signal control_neg     : STD_LOGIC;
+begin
+    process(CLOCK, RESET)
+    begin
+        if RESET = '1' then
+            current_state <= Init;
+        else
+            current_state <= next_state;
+        end if;
+    end process;
+
+    process(RESET, current_state)
+    begin
+        if RESET = '1' then
+            next_state <= Init;
+        else
+            case current_state is
+                when Init =>
+                    next_state <= Round1;
+                    multiplier <= A;
+                    multiplicand <= B;
+                when Round1 =>
+                    next_state <= Round2;
+                when Round2 =>
+                    next_state <= Finished;
+                when others =>
+                    next_state <= Init;
+            end case;
+        end if;
+    end process;
+
+    add_sub_in_pre <= (multiplicand(4 downto 0) & '0') when control_2A = '1' else "000000";
+    add_sub_in_a   <= multiplicand when control_A = '1' else add_sub_in_pre;
+    partial_product <= (resize(add_sub_in_a) + partial_product) sra 2;
+end architecture;

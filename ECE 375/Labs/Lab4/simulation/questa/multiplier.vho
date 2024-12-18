@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition"
 
--- DATE "11/25/2024 12:57:44"
+-- DATE "12/17/2024 19:10:13"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -84,8 +84,8 @@ ENTITY 	MULTIPLIER IS
 	START : IN std_logic;
 	A : IN std_logic_vector(7 DOWNTO 0);
 	B : IN std_logic_vector(7 DOWNTO 0);
-	PRODUCT : OUT std_logic_vector(15 DOWNTO 0);
-	DONE : OUT std_logic
+	PRODUCT : BUFFER std_logic_vector(15 DOWNTO 0);
+	DONE : BUFFER std_logic
 	);
 END MULTIPLIER;
 
