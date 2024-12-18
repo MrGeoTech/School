@@ -1,8 +1,9 @@
 
 State Machine - |Multiplier|next_state
-Name next_state.Finished next_state.Round3 next_state.Round2 next_state.Round1 next_state.Init 
-next_state.Init 0 0 0 0 0 
-next_state.Round1 0 0 0 1 1 
-next_state.Round2 0 0 1 0 1 
-next_state.Round3 0 1 0 0 1 
-next_state.Finished 1 0 0 0 1 
+Name next_state.Finished next_state.Round4 next_state.Round3 next_state.Round2 next_state.Round1 next_state.Init 
+next_state.Init 0 0 0 0 0 0 
+next_state.Round1 0 0 0 0 1 1 
+next_state.Round2 0 0 0 1 0 1 
+next_state.Round3 0 0 1 0 0 1 
+next_state.Round4 0 1 0 0 0 1 
+next_state.Finished 1 0 0 0 0 1 

@@ -15,7 +15,7 @@ entity Multiplier is
 end entity Multiplier;
 
 architecture Arch of Multiplier is
-    type state_type is (Init, Round1, Round2, Round3, Finished);
+    type state_type is (Init, Round1, Round2, Round3, Round4, Finished);
     signal current_state, next_state : state_type;
 
     signal multiplicand    : SIGNED(5 downto 0);
@@ -57,53 +57,70 @@ begin
         end if;
     end process;
 
-    process(RESET, current_state)
+    process(CLOCK, RESET)
     begin
         if RESET = '1' then
             next_state <= Init;
         elsif rising_edge(CLOCK) then
             case current_state is
                 when Init =>
-                    next_state <= Round1;
-                    multiplicand <= A;
-                    multiplier <= B & '0';
-                    partial_product <= (others => '0');
+                    if START = '1' then
+                        next_state <= Round1;
+                        multiplicand <= A;
+                        multiplier <= B & '0';
+                        partial_product <= (others => '0');
+                    
+                        if control_2A = '1' then
+                            add_sub_in <= multiplicand(4 downto 0) & "0000000";
+                        elsif control_A = '1' then
+                            add_sub_in <= multiplicand & "000000";
+                        else
+                            add_sub_in <= (others => '0');
+                        end if;
+                    else
+                        next_state <= Init;
+                    end if;
                 when Round1 =>
                     next_state <= Round2;
 
+                    partial_product <= add_result(12) & add_result(12 downto 2);
+                    multiplier <= "00" & multiplier(6 downto 2);
+                    
                     if control_2A = '1' then
-                        add_sub_in <= resize((multiplicand(4 downto 0) & '0'), 12);
+                        add_sub_in <= multiplicand(4 downto 0) & "0000000";
                     elsif control_A = '1' then
-                        add_sub_in <= resize(multiplicand, 12);
+                        add_sub_in <= multiplicand & "000000";
                     else
                         add_sub_in <= (others => '0');
                     end if;
-
-                    partial_product <= add_result(12) & add_result(12 downto 2);
-                    multiplier <= "00" & multiplier(6 downto 2);
                 when Round2 =>
                     next_state <= Round3;
 
+                    partial_product <= add_result(12) & add_result(12 downto 2);
+                    multiplier <= "00" & multiplier(6 downto 2);
+                    
                     if control_2A = '1' then
-                        add_sub_in <= resize((multiplicand(4 downto 0) & '0'), 12);
+                        add_sub_in <= multiplicand(4 downto 0) & "0000000";
                     elsif control_A = '1' then
-                        add_sub_in <= resize(multiplicand, 12);
+                        add_sub_in <= multiplicand & "000000";
                     else
                         add_sub_in <= (others => '0');
                     end if;
+                when Round3 =>
+                    next_state <= Round4;
 
                     partial_product <= add_result(12) & add_result(12 downto 2);
                     multiplier <= "00" & multiplier(6 downto 2);
-                when Round3 =>
-                    next_state <= Finished;
-
+                    
                     if control_2A = '1' then
-                        add_sub_in <= resize((multiplicand(4 downto 0) & '0'), 12);
+                        add_sub_in <= multiplicand(4 downto 0) & "0000000";
                     elsif control_A = '1' then
-                        add_sub_in <= resize(multiplicand, 12);
+                        add_sub_in <= multiplicand & "000000";
                     else
                         add_sub_in <= (others => '0');
                     end if;
+                when Round4 =>
+                    next_state <= Finished;
 
                     partial_product <= add_result(12) & add_result(12 downto 2);
                     multiplier <= "00" & multiplier(6 downto 2);
