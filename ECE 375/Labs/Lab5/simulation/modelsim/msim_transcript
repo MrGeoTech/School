@@ -1,0 +1,87 @@
+# do Multiplier_run_msim_gate_vhdl.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work gate_work 
+# Copying /home/mrgeotech/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {Multiplier_7_1200mv_85c_slow.vho}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:07:41 on Dec 18,2024
+# vcom -reportprogress 300 -93 -work work Multiplier_7_1200mv_85c_slow.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneive_atom_pack
+# -- Loading package cycloneive_components
+# -- Compiling entity hard_block
+# -- Compiling architecture structure of hard_block
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Multiplier
+# -- Compiling architecture structure of Multiplier
+# End time: 13:07:41 on Dec 18,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# 
+# stdin: <EOF>
+vsim work.multiplier
+# vsim work.multiplier 
+# Start time: 13:07:44 on Dec 18,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading altera.dffeas_pack
+# Loading altera.altera_primitives_components
+# Loading cycloneive.cycloneive_atom_pack(body)
+# Loading cycloneive.cycloneive_components
+# Loading ieee.numeric_std(body)
+# Loading work.multiplier(structure)
+# Loading work.hard_block(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneive.cycloneive_io_obuf(arch)
+# Loading cycloneive.cycloneive_io_ibuf(arch)
+# Loading altera.dffeas(vital_dffeas)
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
+# ** Warning: Design size of 13893 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+add wave -position insertpoint  \
+sim:/multiplier/A \
+sim:/multiplier/B \
+sim:/multiplier/CLOCK \
+sim:/multiplier/RESET \
+sim:/multiplier/START \
+sim:/multiplier/DONE \
+sim:/multiplier/P
+force -freeze sim:/multiplier/A 000011 0
+force -freeze sim:/multiplier/B 000010 0
+force -freeze sim:/multiplier/RESET 1 0
+force -freeze sim:/multiplier/START 0 0
+force -freeze sim:/multiplier/CLOCK 1 0, 0 {50 ps} -r 100
+run
+force -freeze sim:/multiplier/RESET 0 0
+force -freeze sim:/multiplier/START 1 0
+run
+force -freeze sim:/multiplier/START 0 0
+run
+run
+run
+run
+run
+run
+# WARNING: No extended dataflow license exists
+run
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# End time: 13:27:46 on Dec 18,2024, Elapsed time: 0:20:02
+# Errors: 0, Warnings: 1
