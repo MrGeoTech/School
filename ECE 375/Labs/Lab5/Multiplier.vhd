@@ -131,4 +131,7 @@ begin
             Control_neg => control_neg
         );
 
+    P    <= partial_product(11 downto 0);
+    DONE <= '1' when current_state = Finished else '0';
+
 end architecture;
